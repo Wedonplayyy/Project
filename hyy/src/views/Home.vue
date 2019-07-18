@@ -74,7 +74,7 @@
 
     <div class="floor1">
       <div v-for="(item,index) in this.Redata.floor1"
-           :class="index === 0? classObject1:classObject"
+           :class="[classObject,{classObject1: index === 0}]"
            :key="item.goodsId">
         <img :src="item.image" width="100%" height="100%">
       </div>
@@ -139,6 +139,14 @@
 </script>
 
 <style scoped>
+  .classObject {
+    border: 1px solid #e5e4e9;
+  }
+  .classObject1 {
+
+  grid-row-start: 1;
+  grid-row-end: 3;
+  }
   .container{
     background-color: #eeeeee;
     height:2000px;
