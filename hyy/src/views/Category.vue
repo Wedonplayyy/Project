@@ -4,17 +4,17 @@
       <p>商品分类</p>
     </div>
     <div class="main">
-      <van-sidebar v-model="activeKey">
+      <van-sidebar v-model="activeKey" @change="change">
         <van-sidebar-item v-for="(item,index) in this.Catedata"
                           :title="item.mallCategoryName"
-                          :keys="item.goodsId"/>{{this.activeKey}}
+                          :keys="item.goodsId"/>
       </van-sidebar>
       <div width="290px">
         <van-tabs v-model="active" :onclick="onClick(activeKey,active)">
-          <van-tab v-for="(item) in this.Catedata"
+          <van-tab v-for="(item) in this.data1"
                    :title ='item.mallSubName'>
-            <div style="width:290px;height:auto;"  >
-<!--              {{this.NameItem[0]}}-->
+            <div style="width:290px;height:auto;">
+              {{item.mallSubId}}
             </div>
           </van-tab>
         </van-tabs>
@@ -33,24 +33,22 @@
     props: {},
     data() {
       return {
-        index:0,
+        index:'2c9f6c946016ea9b016016f79c8e0000',
         activeKey:0,//点击的大分类index
         active: 0,//点击的小分类index
-        Catedata:{},//首页的大分类数据即category 获取下面数据仍需参数，
+        Catedata:{},//首页的大分类数据即category 获取下面数据仍需参数
+        data1:[],
+        data2:[]
       };
     },
     methods: {
+      change(){
+        this.active = 0;
+        this.data1=this.Catedata[this.activeKey].bxMallSubDto;
+      },
       onClick(id1,id2){
         //点击分类切换显示的数据
-        let str = '2c9f6c946016ea9b016016f79c8e0000';
-        this.$axios.req('api/classification?mallSubId='+str)
-          .then((res)=>{
-            if(res){
-              this.selectData=res.data.dataList.name;
-            }
-          }).catch((err)=>{
-          console.log(err);
-        })
+        this.$toast(id1+' '+id2);
       }
     },
     mounted() {
@@ -59,17 +57,22 @@
         .then((res)=>{
           if(res){
             this.Catedata=res.data.data.category;
-            console.log(this.Catedata);
+            this.data1=this.Catedata[this.activeKey].bxMallSubDto;
+            console.log(this.data1);
+            this.index=this.data1[this.active].mallSubId;
+            console.log(this.index);
           }
         }).catch((err)=>{
         console.log(err);
       })
-    },
-   beforeMount() { //打开首页时默认显示数据
-      let str = '2c9f6c946016ea9b016016f79c8e0000';
-      this.$axios.req('api/classification?mallSubId='+str)
+      //打开首页时默认显示数据
+      let str = 'api/classification?mallSubId='+this.index
+      console.log(str);
+      this.$axios.req(str)
         .then((res)=>{
           if(res){
+            console.log(res);
+            this.data2 = res.data.dataList;
           }
         }).catch((err)=>{
         console.log(err);
