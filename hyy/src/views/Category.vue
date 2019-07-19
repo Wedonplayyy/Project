@@ -22,7 +22,14 @@
                 <div class="img">
                   <img :src="item.image" width="100%">
                 </div>
-                <div class="grid-text">{{item.name}}</div>
+                <div class="grid-text">
+                  <div>
+                    {{item.name}}
+                  </div>
+                  <div style="margin:20px 0px">
+                    ￥{{item.present_price}}
+                  </div>
+                </div>
               </div>
             </div>
           </van-tab>
@@ -118,20 +125,17 @@
   .grid-item{
     background-color: white;
     display: flex;
-    align-items: center;
     width:100%;
     height:100px;
     padding:10px 20px;
   }
   .grid-text{
-    justify-content: center;
-    margin: 20px;
-    padding:10px;
-    text-align: center;
+    margin:0px 20px;
     font-size: 14px;
     color: red;
   }
   .img{
+    border: solid 1px #eeeeee;
     width:70px;
     height:70px;
   }
