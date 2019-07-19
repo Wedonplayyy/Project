@@ -9,16 +9,24 @@
                           :title="item.mallCategoryName"
                           :keys="item.goodsId"/>
       </van-sidebar>
-      <div width="290px">
-        <van-tabs v-model="active" :onclick="onClick(activeKey,active)">
+      <div height="900px">
+        <van-tabs
+          v-model="active"
+          :onclick="onClick(active)"
+          title-active-color="red">
           <van-tab v-for="(item) in this.data1"
                    :title ='item.mallSubName'>
-            <div style="width:290px;height:auto;">
-              {{item.mallSubId}}
+            <div style="width:290px;height:auto;"
+            v-for="(item,index) in data2">
+              <div class="grid-item">
+                <div class="img">
+                  <img :src="item.image" width="100%">
+                </div>
+                <div class="grid-text">{{item.name}}</div>
+              </div>
             </div>
           </van-tab>
         </van-tabs>
-        <router-view></router-view>
       </div>
     </div>
 
@@ -37,18 +45,20 @@
         activeKey:0,//点击的大分类index
         active: 0,//点击的小分类index
         Catedata:{},//首页的大分类数据即category 获取下面数据仍需参数
-        data1:[],
-        data2:[]
+        data1:[],//第一分类
+        data2:[]//第二分类
       };
     },
     methods: {
       change(){
         this.active = 0;
         this.data1=this.Catedata[this.activeKey].bxMallSubDto;
+        console.log(this.data1[0].mallSubName);
       },
-      onClick(id1,id2){
+      onClick(id2){
         //点击分类切换显示的数据
-        this.$toast(id1+' '+id2);
+        // this.data2 = this.data1[id1];
+        console.log(this.index);
       }
     },
     mounted() {
@@ -58,21 +68,18 @@
           if(res){
             this.Catedata=res.data.data.category;
             this.data1=this.Catedata[this.activeKey].bxMallSubDto;
-            console.log(this.data1);
             this.index=this.data1[this.active].mallSubId;
-            console.log(this.index);
           }
         }).catch((err)=>{
         console.log(err);
       })
       //打开首页时默认显示数据
       let str = 'api/classification?mallSubId='+this.index
-      console.log(str);
       this.$axios.req(str)
         .then((res)=>{
           if(res){
-            console.log(res);
             this.data2 = res.data.dataList;
+            console.log(this.data2[0].name);
           }
         }).catch((err)=>{
         console.log(err);
@@ -88,7 +95,7 @@
 <style scoped>
   .container{
     background-color: #eeeeee;
-    height:1000px;
+    height:1500px;
   }
   .header{
     display:flex;
@@ -106,5 +113,26 @@
   }
   .main{
     display: flex;
+    height:1000px;
+  }
+  .grid-item{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width:100%;
+    height:100px;
+    padding:10px 20px;
+  }
+  .grid-text{
+    justify-content: center;
+    margin: 20px;
+    padding:10px;
+    text-align: center;
+    font-size: 14px;
+    color: red;
+  }
+  .img{
+    width:70px;
+    height:70px;
   }
 </style>
