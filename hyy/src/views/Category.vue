@@ -7,13 +7,13 @@
       <van-sidebar v-model="activeKey">
         <van-sidebar-item v-for="(item,index) in this.Catedata"
                           :title="item.mallCategoryName"
-                          :keys="item.goodsId"/>
+                          :keys="item.goodsId"/>{{this.activeKey}}
       </van-sidebar>
       <div width="290px">
         <van-tabs v-model="active" :onclick="onClick(activeKey,active)">
-          <van-tab v-for="(item) in this.cateArray1[activeKey]"
+          <van-tab v-for="(item) in this.Catedata"
                    :title ='item.mallSubName'>
-            <div style="width:290px;height:auto;">
+            <div style="width:290px;height:auto;"  >
 <!--              {{this.NameItem[0]}}-->
             </div>
           </van-tab>
@@ -33,12 +33,10 @@
     props: {},
     data() {
       return {
-        cateArray1:[],//分类的数据，例如cateArray1[0][0]是热带水果
+        index:0,
         activeKey:0,//点击的大分类index
         active: 0,//点击的小分类index
         Catedata:{},//首页的大分类数据即category 获取下面数据仍需参数，
-        selectData:[],//存储点击的分类商品的id
-        NameItem:[]//存储所有商品分类的名字
       };
     },
     methods: {
@@ -61,9 +59,7 @@
         .then((res)=>{
           if(res){
             this.Catedata=res.data.data.category;
-            for (let i in this.Catedata) {
-              this.cateArray1.push(this.Catedata[i].bxMallSubDto);
-            }
+            console.log(this.Catedata);
           }
         }).catch((err)=>{
         console.log(err);
@@ -74,10 +70,6 @@
       this.$axios.req('api/classification?mallSubId='+str)
         .then((res)=>{
           if(res){
-            for(let i in res.data.dataList) {
-              this.NameItem.push(res.data.dataList[i].name)
-            }
-            console.log(this.NameItem);
           }
         }).catch((err)=>{
         console.log(err);
