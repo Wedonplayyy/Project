@@ -72,7 +72,7 @@
     <!--    休闲食品-->
     <div style = "margin: 20px 0px;font-size: 15px;text-align: center;color:red">休闲食品</div>
 
-    <div class="floor1">
+    <div class="floor">
       <div v-for="(item,index) in this.Redata.floor1"
            class="classObject"
            :class="{classObject1: index === 0}"
@@ -83,12 +83,38 @@
 
     <!--    新鲜水果-->
     <div style = "margin: 20px 0px;font-size: 15px;text-align: center;color:red">新鲜水果</div>
+    <div class="floor">
+      <div v-for="(item,index) in this.Redata.floor2"
+           class="classObject"
+           :class="{classObject1: index === 0}"
+           :key="item.goodsId">
+        <img :src="item.image" width="100%" height="100%">
+      </div>
+    </div>
 
     <!--    营养奶品-->
     <div style = "margin: 20px 0px;font-size: 15px;text-align: center;color:red">营养奶品</div>
+      <div class="floor">
+        <div v-for="(item,index) in this.Redata.floor3"
+             class="classObject"
+             :class="{classObject1: index === 0}"
+             :key="item.goodsId">
+          <img :src="item.image" width="100%" height="100%">
+        </div>
+      </div>
 
     <!--    热销商品-->
     <div style = "margin: 20px 0px;font-size: 15px;text-align: center;color:red">热销商品</div>
+    <div class="hotgoods">
+      <div v-for="(item,index) in this.Redata.hotGoods"
+           :key="item.goodsId">
+        <img :src="item.image" width="100%" height="auto">
+        <div class="box5">
+            {{item.name}}<br>
+          ￥{{item.price}}
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -134,13 +160,12 @@
     border: 1px solid #e5e4e9;
   }
   .classObject1 {
-
   grid-row-start: 1;
   grid-row-end: 3;
   }
   .container{
     background-color: #eeeeee;
-    height:2000px;
+    height:4500px;
   }
   .flex-container {
     display: -webkit-flex;
@@ -184,6 +209,18 @@
     /*width: 50px;*/
     /*padding: 15px 10px;*/
   }
+  .box5 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    background-color: white;
+    font-size: 15px;
+    text-align: center;
+    color:red;
+    width: 150px;
+    height:auto;
+    padding: 5px 20px;
+  }
   .grid{
     /*margin: 10px;*/
     padding: 5px;
@@ -210,18 +247,16 @@
   .content div{
     text-align: center;
   }
-  .floor1{
+  .floor{
     display: grid;
     grid-template-columns: 50%  50%;
     grid-template-rows: 110px 110px 110px;
     /*gird-auto-flow:row;*/
   }
-  .pic-1 {
-    text-align: center;
-    border: 1px solid #e5e4e9;
+  .hotgoods{
+    display: grid;
+    grid-template-columns: 50%  50%;
   }
-  .pic-2 {
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
+
+
 </style>

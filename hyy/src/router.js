@@ -31,9 +31,9 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Recommend.vue'),
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: '/shoppingcart',
+      name: 'shoppingcart',
+      component: () => import(/* webpackChunkName: "about" */ './views/ShoppingCart.vue'),
     },
   ],
 });
