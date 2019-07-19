@@ -1,6 +1,6 @@
 <template>
     <div>
-        ShoppingCart
+
     </div>
 
 </template>
@@ -11,9 +11,15 @@
         components: {},
         props: {},
         data() {
-            return {}
+            return {
+              msg:['1','2','sdg'],
+            }
         },
-        methods: {},
+        methods: {
+          onClick(name,title){
+            this.$toast(title);
+          }
+        },
         mounted() {
 
         },
