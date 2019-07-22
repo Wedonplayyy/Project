@@ -78,7 +78,7 @@
     height:1000px;
   }
   .header{
-    padding: 2px;
+    /*padding: 2px;*/
     display:flex;
     align-items: center;
     justify-content: center;

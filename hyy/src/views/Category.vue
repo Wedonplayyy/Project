@@ -5,42 +5,49 @@
     </div>
     <div class="main">
       <van-sidebar v-model="activeKey" @change="onClick1">
+<!--        第一大分类-->
         <van-sidebar-item v-for="(item,index) in this.Catedata"
                           :title="item.mallCategoryName"
-                          :keys="item.mallCategoryId"/>
-      </van-sidebar>
-      <div height="900px">
-        <van-tabs
-          v-model="active"
-          @change="onClick2"
-          title-active-color="red">
-          <van-tab v-for="(item) in this.data1"
-                   :title ='item.mallSubName'>
-            <div style="width:290px;height:auto;"
-            v-for="(item,index) in data2">
-              <div class="grid-item">
-                <div class="img">
-                  <img :src="item.image" width="100%">
-                </div>
-                <div class="grid-text">
-                  <div>
-                    {{item.name}}
-                  </div>
-                  <div style="display: flex">
-                    <div style="margin:20px 0px">
-                      ￥{{item.present_price}}
-                    </div>
-                    <div style="margin:20px 10px;color: grey;">
-                      <del>￥{{item.orl_price}}</del>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </van-tab>
-        </van-tabs>
-      </div>
+                          :key="item.mallCategoryId"/>
+       </van-sidebar>
+       <div height="900px">
+         <van-tabs
+           v-model="active"
+           @change="onClick2"
+           title-active-color="red">
+          <!--          第二小分类-->
+           <van-tab
+             v-for="(item,index) in this.data1"
+             :title ='item.mallSubName'
+             :key="index">
+             <div style="width:290px;height:auto;"
+                  v-for="(item,index) in data2"
+                  :key="index"
+             @click="toDetail(item.id)">
+               <div class="grid-item">
+                 <div class="img">
+                   <img :src="item.image" width="100%">
+                 </div>
+                 <div class="grid-text">
+                   <div>
+                     {{item.name}}
+                   </div>
+                   <div style="display: flex">
+                     <div style="margin:20px 0px">
+                       ￥{{item.present_price}}
+                     </div>
+                     <div style="margin:20px 10px;color: grey;">
+                       <del>￥{{item.orl_price}}</del>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </van-tab>
+         </van-tabs>
+       </div>
     </div>
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -61,11 +68,11 @@
       };
     },
     methods: {
-      getPosts(){
-        let reqList = [];
-        let resList = [];
-        for(;;){}
-
+      toDetail(id){
+        this.$router.push({
+          path:'/detail'
+        })
+        this.$store.commit('set_SelectedId',id)
       },
       onClick1(){
         this.onClick2();
@@ -75,14 +82,14 @@
         console.log('显示的商品第一种类是'+this.Catedata[this.activeKey].mallCategoryName);
         console.log('显示的商品第二种类是'+this.data1[this.active].mallSubName);
         console.log(this.data1[this.active].mallSubId);
-        console.log("显示的第一个商品是"+this.data2[this.active].name);
+        // console.log("显示的第一个商品是"+this.data2[this.active].name);
       },
       onClick2(){
         console.log('点击第二分类');
-
-        // if(this.flag){
-          this.data1=this.Catedata[this.activeKey].bxMallSubDto;
-          this.index=this.data1[this.active].mallSubId;
+        console.log(this.active);
+        console.log('海外直采和洋酒暂无数据');
+          this.data1 = this.Catedata[this.activeKey].bxMallSubDto;
+          this.index = this.data1[this.active].mallSubId;
           // let str = 'api/classification?mallSubId='+this.index
           console.log(this.data1[this.active].mallSubName);
           console.log(this.index);
@@ -91,7 +98,6 @@
           .then((res)=>{
             if(res){
               this.data2 = res.data.dataList;
-              console.log(this.data2[this.active].name);
             }
           }).catch((err)=>{
           console.log(err);
@@ -99,6 +105,8 @@
       }
     },
     mounted() {
+      this.activeKey = this.$store.state.activeKey ;
+      // this.onClick1();
       //获取首页的分类数据
       this.$axios.req('api/recommend')
         .then((res)=>{
@@ -107,21 +115,19 @@
             this.data1=this.Catedata[this.activeKey].bxMallSubDto;
             this.index=this.data1[this.active].mallSubId;
             this.flag=true;
-            // console.log(this.index);
+            this.onClick1();
+            this.onClick2();
           }
         }).catch((err)=>{
         console.log(err);
       })
-
-      //axios多个请求
-
       //打开首页时默认显示数据
       let str = 'api/classification?mallSubId='+this.index
       this.$axios.req(str)
         .then((res)=>{
           if(res){
             this.data2 = res.data.dataList;
-            console.log(this.data2[this.active].name);
+            console.log('默认的第一个商品'+this.data2[this.active].name);
           }
         }).catch((err)=>{
         console.log(err);
@@ -137,7 +143,6 @@
 <style scoped>
   .container{
     background-color: #eeeeee;
-    /*height:150%;*/
   }
   .header{
     display:flex;
@@ -146,26 +151,23 @@
     background-color: white;
     margin:0 auto;
     width:100%;
-    height: 35px;
+    height: 46px;
     text-align: center;
   }
   .header p{
-    font-size:15px;
-    /*inline-height:28px;*/
+    font-size:16px;
   }
   .main{
     display: flex;
-    /*height:120%;*/
   }
   .grid-item{
     background-color: white;
     display: flex;
-    width:100%;
     height:100px;
-    padding:10px 20px;
+    padding:10px 0px 10px 10px;
   }
   .grid-text{
-    margin:0px 20px;
+    margin:0px 0px 0px 10px;
     font-size: 14px;
     color: red;
   }
@@ -173,5 +175,9 @@
     border: solid 1px #eeeeee;
     width:70px;
     height:70px;
+  }
+  .footer{
+    width:100%;
+    height:60px;
   }
 </style>

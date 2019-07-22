@@ -38,7 +38,7 @@
           v-for = "(item, index) in this.Redata.category"
           :key="item.goodsId"
           :text="item.mallCategoryName" to="/category"
-          :click="click(index)">
+          @click="set(index)">
           <div>
             <van-image :src="item.image"></van-image>
             <div>{{item.mallCategoryName}}</div>
@@ -135,9 +135,12 @@
       };
     },
     methods: {
+      set(id) {
+        this.$store.commit('set_num',id)
+        console.log(id);
+      },
       onSearch(){},
       click(id){
-        Category.activeKey=id;
       }
     },
     mounted() {
@@ -180,7 +183,7 @@
   .box{
     /*选择城市*/
     width: 25%;
-    height:120%;
+    /*height:120%;*/
   }
   .box1{
     display: -webkit-flex;
@@ -212,8 +215,6 @@
     -webkit-justify-content: center;
     justify-content: center;
     background-color: white;
-    /*width: 50px;*/
-    /*padding: 15px 10px;*/
   }
   .box5 {
     overflow: hidden;
@@ -223,9 +224,9 @@
     font-size: 15px;
     text-align: center;
     color:red;
-    width: 150px;
+    width: 147.5px;
     height:auto;
-    padding: 5px 20px;
+    padding: 0px 20px;
   }
   .grid{
     /*margin: 10px;*/
