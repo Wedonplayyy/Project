@@ -8,9 +8,9 @@
       />
       <div class="swipe">
         <van-swipe :autoplay="3000" indicator-color="white">
-          <van-swipe-item v-for="(item,index) in this.arr"
+          <van-swipe-item v-for="(item,index) in this.str"
           :key="index">
-            <img v-html='item'>{{item}}
+            <img :src="item" width="100%" height="auto;">
           </van-swipe-item>
         </van-swipe>
       </div>
@@ -28,8 +28,7 @@
             return {
               data:{},
               id:'',
-              str:'',
-              arr:[]
+              str:[]
             }
         },
         methods: {
@@ -43,10 +42,10 @@
             .then((res)=>{
               if(res){
                 this.data = res.data.goods.goodsOne;
-                this.str = this.data.detail.replace(/>/g, ">gg");
+                this.str = this.data.detail;
+                let reg = /http:\/\/.*?(gif|png|jpg)/gi;
+                this.str = this.str.match(reg);
                 console.log(this.str);
-                this.arr = this.str.split("gg");
-                console.log(this.arr);
               }
             }).catch((err)=>{
             console.log(err);
