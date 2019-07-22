@@ -7,8 +7,12 @@
         @click-left="onClickLeft"
       />
       <div class="swipe">
-        <div v-html="this.data.detail">
-        </div>
+        <van-swipe :autoplay="3000" indicator-color="white">
+          <van-swipe-item v-for="(item,index) in this.arr"
+          :key="index">
+            <img v-html='item'>{{item}}
+          </van-swipe-item>
+        </van-swipe>
       </div>
 
       <div class="footer"></div>
@@ -23,7 +27,9 @@
         data() {
             return {
               data:{},
-              id:''
+              id:'',
+              str:'',
+              arr:[]
             }
         },
         methods: {
@@ -33,12 +39,14 @@
         },
         mounted() {
           this.id = this.$store.state.selectedId ;
-          console.log(this.id);
           this.$axios.req('api/goods/one?id='+this.id)
             .then((res)=>{
               if(res){
                 this.data = res.data.goods.goodsOne;
-                console.log(res.data);
+                this.str = this.data.detail.replace(/>/g, ">gg");
+                console.log(this.str);
+                this.arr = this.str.split("gg");
+                console.log(this.arr);
               }
             }).catch((err)=>{
             console.log(err);
@@ -55,6 +63,9 @@
 </script>
 
 <style scoped>
+  .swipe{
+    margin-top: 2px;
+  }
   .footer{
     width:100%;
     height:60px;

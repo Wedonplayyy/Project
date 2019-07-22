@@ -76,23 +76,12 @@
       },
       onClick1(){
         this.onClick2();
-        console.log('点击第一分类');
         this.active = 0;
         this.data1=this.Catedata[this.activeKey].bxMallSubDto;
-        console.log('显示的商品第一种类是'+this.Catedata[this.activeKey].mallCategoryName);
-        console.log('显示的商品第二种类是'+this.data1[this.active].mallSubName);
-        console.log(this.data1[this.active].mallSubId);
-        // console.log("显示的第一个商品是"+this.data2[this.active].name);
       },
       onClick2(){
-        console.log('点击第二分类');
-        console.log(this.active);
-        console.log('海外直采和洋酒暂无数据');
-          this.data1 = this.Catedata[this.activeKey].bxMallSubDto;
-          this.index = this.data1[this.active].mallSubId;
-          // let str = 'api/classification?mallSubId='+this.index
-          console.log(this.data1[this.active].mallSubName);
-          console.log(this.index);
+        this.data1 = this.Catedata[this.activeKey].bxMallSubDto;
+        this.index = this.data1[this.active].mallSubId;
         let str = 'api/classification?mallSubId='+this.index
         this.$axios.req(str)
           .then((res)=>{
@@ -127,7 +116,7 @@
         .then((res)=>{
           if(res){
             this.data2 = res.data.dataList;
-            console.log('默认的第一个商品'+this.data2[this.active].name);
+            // console.log('默认的第一个商品'+this.data2[this.active].name);
           }
         }).catch((err)=>{
         console.log(err);
