@@ -4,15 +4,15 @@
       <p>商品分类</p>
     </div>
     <div class="main">
-      <van-sidebar v-model="activeKey" @change="change">
+      <van-sidebar v-model="activeKey" @change="onClick1">
         <van-sidebar-item v-for="(item,index) in this.Catedata"
                           :title="item.mallCategoryName"
-                          :keys="item.goodsId"/>
+                          :keys="item.mallCategoryId"/>
       </van-sidebar>
       <div height="900px">
         <van-tabs
           v-model="active"
-          :onclick="onClick(active)"
+          @change="onClick2"
           title-active-color="red">
           <van-tab v-for="(item) in this.data1"
                    :title ='item.mallSubName'>
@@ -26,8 +26,13 @@
                   <div>
                     {{item.name}}
                   </div>
-                  <div style="margin:20px 0px">
-                    ￥{{item.present_price}}
+                  <div style="display: flex">
+                    <div style="margin:20px 0px">
+                      ￥{{item.present_price}}
+                    </div>
+                    <div style="margin:20px 10px;color: grey;">
+                      <del>￥{{item.orl_price}}</del>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -36,8 +41,6 @@
         </van-tabs>
       </div>
     </div>
-
-<!--    <router-view></router-view>-->
   </div>
 </template>
 
@@ -49,6 +52,7 @@
     data() {
       return {
         index:'2c9f6c946016ea9b016016f79c8e0000',
+        flag:false,//初始化完成标志
         activeKey:0,//点击的大分类index
         active: 0,//点击的小分类index
         Catedata:{},//首页的大分类数据即category 获取下面数据仍需参数
@@ -57,15 +61,41 @@
       };
     },
     methods: {
-      change(){
+      getPosts(){
+        let reqList = [];
+        let resList = [];
+        for(;;){}
+
+      },
+      onClick1(){
+        this.onClick2();
+        console.log('点击第一分类');
         this.active = 0;
         this.data1=this.Catedata[this.activeKey].bxMallSubDto;
-        console.log(this.data1[0].mallSubName);
+        console.log('显示的商品第一种类是'+this.Catedata[this.activeKey].mallCategoryName);
+        console.log('显示的商品第二种类是'+this.data1[this.active].mallSubName);
+        console.log(this.data1[this.active].mallSubId);
+        console.log("显示的第一个商品是"+this.data2[this.active].name);
       },
-      onClick(id2){
-        //点击分类切换显示的数据
-        // this.data2 = this.data1[id1];
-        console.log(this.index);
+      onClick2(){
+        console.log('点击第二分类');
+
+        // if(this.flag){
+          this.data1=this.Catedata[this.activeKey].bxMallSubDto;
+          this.index=this.data1[this.active].mallSubId;
+          // let str = 'api/classification?mallSubId='+this.index
+          console.log(this.data1[this.active].mallSubName);
+          console.log(this.index);
+        let str = 'api/classification?mallSubId='+this.index
+        this.$axios.req(str)
+          .then((res)=>{
+            if(res){
+              this.data2 = res.data.dataList;
+              console.log(this.data2[this.active].name);
+            }
+          }).catch((err)=>{
+          console.log(err);
+        })
       }
     },
     mounted() {
@@ -76,17 +106,22 @@
             this.Catedata=res.data.data.category;
             this.data1=this.Catedata[this.activeKey].bxMallSubDto;
             this.index=this.data1[this.active].mallSubId;
+            this.flag=true;
+            // console.log(this.index);
           }
         }).catch((err)=>{
         console.log(err);
       })
+
+      //axios多个请求
+
       //打开首页时默认显示数据
       let str = 'api/classification?mallSubId='+this.index
       this.$axios.req(str)
         .then((res)=>{
           if(res){
             this.data2 = res.data.dataList;
-            console.log(this.data2[0].name);
+            console.log(this.data2[this.active].name);
           }
         }).catch((err)=>{
         console.log(err);
@@ -102,7 +137,7 @@
 <style scoped>
   .container{
     background-color: #eeeeee;
-    height:1500px;
+    /*height:150%;*/
   }
   .header{
     display:flex;
@@ -120,7 +155,7 @@
   }
   .main{
     display: flex;
-    height:1000px;
+    /*height:120%;*/
   }
   .grid-item{
     background-color: white;

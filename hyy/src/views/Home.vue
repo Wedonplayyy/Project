@@ -37,7 +37,8 @@
         <van-grid-item
           v-for = "(item, index) in this.Redata.category"
           :key="item.goodsId"
-          :text="item.mallCategoryName" to="/user">
+          :text="item.mallCategoryName" to="/category"
+          :click="click(index)">
           <div>
             <van-image :src="item.image"></van-image>
             <div>{{item.mallCategoryName}}</div>
@@ -111,12 +112,14 @@
         <img :src="item.image" width="100%" height="auto">
         <div class="box5">
             {{item.name}}<br>
-          ￥{{item.price}}
+          ￥{{item.mallPrice}}
+            <del style="color: grey;font-size: 10px">￥{{item.price}}</del>
+          </div>
         </div>
       </div>
+    <div class="footer"></div>
     </div>
 
-  </div>
 </template>
 
 <script>
@@ -133,6 +136,9 @@
     },
     methods: {
       onSearch(){},
+      click(id){
+        Category.activeKey=id;
+      }
     },
     mounted() {
       this.$nextTick(() => {
@@ -165,7 +171,7 @@
   }
   .container{
     background-color: #eeeeee;
-    height:4500px;
+    height:;
   }
   .flex-container {
     display: -webkit-flex;
@@ -174,7 +180,7 @@
   .box{
     /*选择城市*/
     width: 25%;
-    height:auto;
+    height:120%;
   }
   .box1{
     display: -webkit-flex;
@@ -256,6 +262,10 @@
   .hotgoods{
     display: grid;
     grid-template-columns: 50%  50%;
+  }
+  .footer{
+    width:100%;
+    height:100px;
   }
 
 
