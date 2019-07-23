@@ -1,5 +1,14 @@
 <template>
     <div class="container">
+      <div style="height:45px;">
+        <van-nav-bar
+          fixed="true"
+          title="商品详情"
+          left-text="返回"
+          left-arrow
+          @click-left="onClickLeft"
+        />
+      </div>
 <!--      <div class="pic" v-html="this.data.detail">-->
 <!--      </div>-->
 
@@ -7,7 +16,7 @@
         <van-swipe :autoplay="3000" indicator-color="white">
           <van-swipe-item v-for="(item,index) in this.str"
           :key="index">
-            <img :src="item" width="100%" height="auto;">
+            <img :src="item" width="100%" height="400px;">
           </van-swipe-item>
         </van-swipe>
       </div>
@@ -60,8 +69,13 @@
             }
         },
         methods: {
+          onClickLeft(){
+            this.$router.back(-1);
+          },
           showCart(){
-
+            this.$router.push({
+              path:'/shoppingcart'
+            })
           }
         },
         mounted() {
@@ -99,7 +113,7 @@
   .info{
     /*flex-direction: column;*/
     align-items: center;
-    width:100%;
+    /*width:100%;*/
     height:70px;
     font-size: 16px;
     border:1px solid #eeeeee;

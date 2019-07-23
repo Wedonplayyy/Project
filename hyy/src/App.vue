@@ -1,13 +1,6 @@
 <template>
   <div id="app">
-    <van-nav-bar
-      v-if="$route.name ==='GoodsDetail'"
-      fixed="true"
-      title="商品详情"
-      left-text="返回"
-      left-arrow
-      @click-left="onClickLeft"
-    />
+
 
     <router-view/>
     <van-tabbar :fixed="true" v-model="active"
@@ -30,9 +23,7 @@
       };
     },
     methods:{
-      onClickLeft(){
-        this.$router.back(-1);
-      },
+
     }
   };
 </script>
