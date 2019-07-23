@@ -45,6 +45,61 @@
             text="已完成"
           />
         </van-grid>
+
+        <div class="item">
+<!--          全部订单-->
+          <div class="icon">
+            <van-icon name="orders-o"></van-icon>
+          </div>
+          <div class="text">
+            全部订单
+          </div>
+          <div class="arrow">
+            <van-icon name="arrow"></van-icon>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <!--          全部订单-->
+          <div class="icon">
+            <van-icon name="star-o"></van-icon>
+          </div>
+          <div class="text">
+            收藏商品
+          </div>
+          <div class="arrow">
+            <van-icon name="arrow"></van-icon>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <!--          全部订单-->
+          <div class="icon">
+            <van-icon name="edit"></van-icon>
+          </div>
+          <div class="text">
+            地址管理
+          </div>
+          <div class="arrow">
+            <van-icon name="arrow"></van-icon>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <!--          全部订单-->
+          <div class="icon">
+            <van-icon name="search"></van-icon>
+          </div>
+          <div class="text">
+            最近浏览
+          </div>
+          <div class="arrow">
+            <van-icon name="arrow"></van-icon>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -75,7 +130,7 @@
 <style scoped>
   .container{
     background-color: #eeeeee;
-    height:1000px;
+    height:667px;
   }
   .header{
     /*padding: 2px;*/
@@ -120,4 +175,32 @@
   .tx img{
     width:100%
   }
+  .item{
+    display:flex;
+    align-items: center;
+    background-color: white;
+    margin: 2px 0 0px 0px;
+    height: 35px;
+    font-size:16px;
+    padding: 5px 0px 5px 15px;
+  }
+  .text{
+    width:150px;
+  }
+  .icon{
+    /*width:100%;*/
+    height:100%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0px 10px 0px 5px;
+  }
+  .arrow{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
 </style>

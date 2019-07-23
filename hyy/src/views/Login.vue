@@ -1,7 +1,16 @@
 <template>
     <div class="container">
       <div class="header">
-        <p>购物车</p>
+        <van-nav-bar
+          v-if="$route.name ==='Login'"
+          fixed="true"
+          title="登录/注册"
+          left-arrow
+          @click-left="onClickLeft"
+        />
+      </div>
+      <div class="form">
+
       </div>
     </div>
 
@@ -9,15 +18,13 @@
 
 <script>
     export default {
-        name: "ShoppingCart",
+        name: "Login",
         components: {},
         props: {},
         data() {
-            return {
-            }
+            return {}
         },
-        methods: {
-        },
+        methods: {},
         mounted() {
 
         },
@@ -36,17 +43,10 @@
     background-color: #eeeeee;
     height:667px;
   }
-  .header{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    margin:0 auto;
+  .form{
+    margin:10px 0px;
+    height:400px;
     width:100%;
-    height: 46px;
-    text-align: center;
-  }
-  .header p{
-    font-size:16px;
+    background-color: white;
   }
 </style>

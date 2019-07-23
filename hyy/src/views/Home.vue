@@ -174,7 +174,7 @@
   }
   .container{
     background-color: #eeeeee;
-    height:;
+    /*height:;*/
   }
   .flex-container {
     display: -webkit-flex;

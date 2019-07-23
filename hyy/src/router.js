@@ -37,6 +37,11 @@ export default new Router({
       name:'GoodsDetail',
       component: () => import('./views/GoodsDetail.vue'),
       props: true
-    }
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('./views/Login.vue'),
+    },
   ],
 });
