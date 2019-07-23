@@ -1,20 +1,45 @@
 <template>
-    <div>
+    <div class="container">
       <van-nav-bar
         title="商品详情"
         left-text="返回"
         left-arrow
         @click-left="onClickLeft"
       />
-      <div class="swipe">
-        <van-swipe :autoplay="3000" indicator-color="white">
-          <van-swipe-item v-for="(item,index) in this.str"
-          :key="index">
-            <img :src="item" width="100%" height="auto;">
-          </van-swipe-item>
-        </van-swipe>
+      <div class="pic" v-html="this.data.detail">
       </div>
 
+<!--      <div class="swipe">-->
+<!--        <van-swipe :autoplay="3000" indicator-color="white">-->
+<!--          <van-swipe-item v-for="(item,index) in this.str"-->
+<!--          :key="index">-->
+<!--            <img :src="item" width="100%" height="auto;">-->
+<!--          </van-swipe-item>-->
+<!--        </van-swipe>-->
+<!--      </div>-->
+      <van-goods-action>
+        <van-goods-action-icon
+          icon="chat-o"
+          text="客服"
+        />
+        <van-goods-action-icon
+          info="5"
+          icon="cart-o"
+          text="购物车"
+        />
+        <van-goods-action-icon
+          icon="shop-o"
+          text="店铺"
+        />
+        <van-goods-action-button
+          type="warning"
+          text="加入购物车"
+        />
+        <van-goods-action-button
+          type="danger"
+          text="立即购买"
+        />
+      </van-goods-action>
       <div class="footer"></div>
     </div>
 </template>
@@ -34,6 +59,12 @@
         methods: {
           onClickLeft(){
             this.$toast('返回')
+          },
+          onClickIcon() {
+            this.$toast('点击图标');
+          },
+          onClickButton() {
+            this.$toast('点击按钮');
           }
         },
         mounted() {
@@ -45,7 +76,6 @@
                 this.str = this.data.detail;
                 let reg = /http:\/\/.*?(gif|png|jpg)/gi;
                 this.str = this.str.match(reg);
-                console.log(this.str);
               }
             }).catch((err)=>{
             console.log(err);
@@ -62,6 +92,8 @@
 </script>
 
 <style scoped>
+  .pic{
+  }
   .swipe{
     margin-top: 2px;
   }
