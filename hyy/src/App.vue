@@ -9,7 +9,7 @@
       @click-left="onClickLeft"
     />
     <router-view/>
-    <van-tabbar v-model="active" v-if="$route.name !== 'GoodsDetail'">
+    <van-tabbar :fixed="true" v-model="active" v-if="$route.name !== 'GoodsDetail'">
       <van-tabbar-item icon="wap-home" to="/">商城</van-tabbar-item>
       <van-tabbar-item icon="ellipsis" to="/category">分类</van-tabbar-item>
       <van-tabbar-item icon="shopping-cart-o" info="5" to="/shoppingcart">购物车</van-tabbar-item>
@@ -27,6 +27,11 @@
         active: 0,
       };
     },
+    methods:{
+      onClickLeft(){
+        this.$router.back(-1);
+      },
+    }
   };
 </script>
 <style>

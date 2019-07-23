@@ -51,15 +51,7 @@
             }
         },
         methods: {
-          onClickLeft(){
-            this.$toast('返回')
-          },
-          onClickIcon() {
-            this.$toast('点击图标');
-          },
-          onClickButton() {
-            this.$toast('点击按钮');
-          }
+
         },
         mounted() {
           this.id = this.$store.state.selectedId ;
