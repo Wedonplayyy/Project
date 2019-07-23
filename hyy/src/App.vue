@@ -1,5 +1,13 @@
 <template>
   <div id="app">
+    <van-nav-bar
+      v-if="$route.name ==='GoodsDetail'"
+      fixed="true"
+      title="商品详情"
+      left-text="返回"
+      left-arrow
+      @click-left="onClickLeft"
+    />
     <router-view/>
     <van-tabbar v-model="active" v-if="$route.name !== 'GoodsDetail'">
       <van-tabbar-item icon="wap-home" to="/">商城</van-tabbar-item>

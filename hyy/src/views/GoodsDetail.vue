@@ -1,22 +1,16 @@
 <template>
     <div class="container">
-      <van-nav-bar
-        title="商品详情"
-        left-text="返回"
-        left-arrow
-        @click-left="onClickLeft"
-      />
       <div class="pic" v-html="this.data.detail">
       </div>
 
-<!--      <div class="swipe">-->
-<!--        <van-swipe :autoplay="3000" indicator-color="white">-->
-<!--          <van-swipe-item v-for="(item,index) in this.str"-->
-<!--          :key="index">-->
-<!--            <img :src="item" width="100%" height="auto;">-->
-<!--          </van-swipe-item>-->
-<!--        </van-swipe>-->
-<!--      </div>-->
+      <div class="swipe">
+        <van-swipe :autoplay="3000" indicator-color="white">
+          <van-swipe-item v-for="(item,index) in this.str"
+          :key="index">
+            <img :src="item" width="100%" height="auto;">
+          </van-swipe-item>
+        </van-swipe>
+      </div>
       <van-goods-action>
         <van-goods-action-icon
           icon="chat-o"
@@ -92,6 +86,9 @@
 </script>
 
 <style scoped>
+  .container{
+    background-color: #eeeeee;
+  }
   .pic{
   }
   .swipe{
