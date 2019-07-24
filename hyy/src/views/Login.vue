@@ -15,11 +15,10 @@
             <van-field
               v-model="username"
               required
-              clearable
               label="用户名"
               right-icon="question-o"
               placeholder="请输入用户名"
-              @click-right-icon="$toast('question')"
+              @click-right-icon="$toast('名称包括大小写字母及数字下划线')"
             />
 
             <van-field
@@ -31,8 +30,8 @@
             />
           </van-cell-group>
           <div style="display: flex;width:100%;height:200px;">
-            <button style="margin:  auto;width:50px;height:50px;">登录</button>
-            <button style="margin:  auto;width:50px;height:50px;">注册</button>
+            <button style="margin:  auto;width:50px;height:50px;" @click="login">登录</button>
+            <button style="margin:  auto;width:50px;height:50px;" @click="register">注册</button>
           </div>
 
         </div>
@@ -48,11 +47,22 @@
         components: {},
         props: {},
         data() {
-            return {}
+            return {
+              username:'',
+              password:'',
+            }
         },
         methods: {
           onClick(){
             this.$router.back(-1);
+          },
+          login(){
+            this.$store.commit('set_keeplogin',1);
+            console.log(this.$store.state.user.keeplogin);
+            this.$router.back(-1);
+          },
+          register(){
+            login();
           }
         },
         mounted() {

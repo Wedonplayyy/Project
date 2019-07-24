@@ -1,19 +1,14 @@
 <template>
     <div class="container">
-<!--      <div style="height:45px;">-->
-<!--        <van-nav-bar-->
-<!--          fixed="true"-->
-<!--          title="商品详情"-->
-<!--          left-text="返回"-->
-<!--          left-arrow-->
-<!--          @click-left="onClickLeft"-->
-<!--        />-->
-<!--      </div>-->
-<!--      <div class="pic" v-html="this.data.detail">-->
-<!--      </div>-->
-
+      <van-nav-bar
+        fixed
+        title="商品详情"
+        left-text="返回"
+        left-arrow
+        @click-left="onClickLeft"
+      />
       <div class="swipe">
-        <van-swipe :autoplay="3000" indicator-color="white">
+        <van-swipe :autoplay="3000" indicator-color="orange">
           <van-swipe-item>
             <img :src="this.data.image" width="100%" height="100%">
           </van-swipe-item>
@@ -33,56 +28,77 @@
           </div>
         </div>
       </div>
-      <div>
         <div class="info2">
           <div>运费:0</div>
           <div>剩余数量:10000</div>
-          <div style="display: flex">
-            <div style="margin: 0px 5px">
-              收藏
+          <div style="display: flex;width:80px;justify-content: flex-end">
+            <div style="margin: 0px 5px" >
+              {{this.text}}
             </div>
-              <van-icon name="like-o" size="16px"/>
+              <van-icon
+                :name="this.name"
+                size="16px"
+                :color="this.color"
+                @click="collect"/>
           </div>
+        </div>
+      <div class="info3">
+        <div style="display: flex">
+          <van-icon name="shop-o" size="20px"/>
+          <div style="margin: 0px 5px">
+            有赞的店
+          </div>
+          <van-tag type="danger" size="medium">官方</van-tag>
+        </div>
+        <div style="display: flex">
+          <div style="margin: 0px 5px">
+            进入店铺
+          </div>
+          <van-icon name="arrow" size="20px"/>
         </div>
       </div>
         <div>
-          <van-tabs v-model="active">
+          <van-tabs v-model="active" sticky :offset-top="44">
             <van-tab title="商品详情">
               <div class="pic" v-html="this.data.detail">
               </div>
             </van-tab>
             <van-tab title="商品评论">
-              商品评论
+              <div style="display: flex;height: 100px;">
+                <div style="margin:auto">
+                  暂无评论
+                </div>
+              </div>
             </van-tab>
           </van-tabs>
         </div>
-
-      <van-goods-action>
-        <van-goods-action-icon
-          icon="chat-o"
-          text="客服"
-        />
-        <van-goods-action-icon
-          info="5"
-          icon="cart-o"
-          text="购物车"
-          @click="showCart"
-        />
-        <van-goods-action-icon
-          icon="shop-o"
-          text="店铺"
-        />
-        <van-goods-action-button
-          type="warning"
-          text="加入购物车"
-        />
-        <van-goods-action-button
-          type="danger"
-          text="立即购买"
-        />
-      </van-goods-action>
-
       <div class="footer"></div>
+      <div>
+        <van-goods-action>
+          <van-goods-action-icon
+            icon="chat-o"
+            text="客服"
+          />
+          <van-goods-action-icon
+            info="5"
+            icon="cart-o"
+            text="购物车"
+            @click="showCart"
+          />
+          <van-goods-action-icon
+            icon="shop-o"
+            text="店铺"
+          />
+          <van-goods-action-button
+            type="warning"
+            text="加入购物车"
+          />
+          <van-goods-action-button
+            type="danger"
+            text="立即购买"
+          />
+        </van-goods-action>
+      </div>
     </div>
 </template>
 
@@ -93,6 +109,9 @@
         props: {},
         data() {
             return {
+              text:'收藏',//收藏按钮文字
+              color:'red',//收藏按钮颜色
+              name:'like-o',//收藏按钮图标
               active:0,
               data:{},
               id:'',
@@ -102,6 +121,26 @@
         methods: {
           onClickLeft(){
             this.$router.back(-1);
+          },
+          collect(){
+            if(
+              this.$store.state.user.keeplogin === 0
+            ){
+              this.$router.push({
+                path:'/login'
+              })
+            }else{
+              if(this.text==='收藏'){
+                this.text='取消收藏';
+                this.name='like';
+                console.log(this.text);
+                this.
+                this.$toast('收藏成功！');
+              }else{
+                this.text='收藏';
+                this.name='like-o';
+              }
+            }
           },
           showCart(){
             this.$router.push({
@@ -129,7 +168,11 @@
         },
         filters: {},
         computed: {},
-        watch: {},
+        watch: {
+          text:function(){
+            return this.text
+          },
+        },
         directives: {}
     }
 </script>
@@ -138,6 +181,10 @@
   .container{
   }
   .pic{
+  }
+  .header{
+    width:100%;
+    height:25px;
   }
   .swipe{
     margin-top: 2px;
@@ -150,10 +197,19 @@
   }
   .info2{
     display: flex;
-    padding: 0px 10px;
+    padding: 5px 10px;
     align-items: center;
     height:30px;
     font-size: 12px;
+    border:1px solid #eeeeee;
+    justify-content: space-between;
+  }
+  .info3{
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+    height:30px;
+    font-size: 15px;
     border:1px solid #eeeeee;
     justify-content: space-between;
   }

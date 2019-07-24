@@ -12,6 +12,7 @@
        </van-sidebar>
        <div height="900px">
          <van-tabs
+           sticky
            v-model="active"
            @change="onClick2"
            title-active-color="red">
@@ -153,7 +154,7 @@
     background-color: white;
     display: flex;
     height:100px;
-    padding:10px 0px 10px 10px;
+    padding:10px 15px 10px 10px;
   }
   .grid-text{
     margin:0px 0px 0px 10px;
@@ -162,6 +163,10 @@
   }
   .img{
     border: solid 1px #eeeeee;
+    width:70px;
+    height:70px;
+  }
+  .img img{
     width:70px;
     height:70px;
   }
