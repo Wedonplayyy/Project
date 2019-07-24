@@ -72,7 +72,7 @@
         this.$router.push({
           path:'/detail'
         })
-        this.$store.commit('set_SelectedId',id)
+        this.$store.commit('set_SelectedSubId',id)
       },
       onClick1(){
         this.onClick2();

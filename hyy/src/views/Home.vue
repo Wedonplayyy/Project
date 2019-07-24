@@ -137,7 +137,7 @@
     methods: {
       set(id) {
         this.$store.commit('set_num',id)
-        console.log(id);
+        this.$store.commit('set_tabActive',1)
       },
       onSearch(){},
       click(id){

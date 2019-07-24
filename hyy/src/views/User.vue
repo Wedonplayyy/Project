@@ -20,27 +20,22 @@
       <div>
         <van-grid :border="false" :column-num="5">
           <van-grid-item
-            :key="value"
             icon="balance-o"
             text="待付款"
           />
           <van-grid-item
-            :key="value"
             icon="send-gift-o"
             text="待发货"
           />
           <van-grid-item
-            :key="value"
             icon="logistics"
             text="待收货"
           />
           <van-grid-item
-            :key="value"
             icon="comment-o"
             text="评价"
           />
           <van-grid-item
-            :key="value"
             icon="points"
             text="已完成"
           />

@@ -23,11 +23,6 @@ export default new Router({
       component: () => import('./views/Category.vue'),
     },
     {
-      path: '/recommend',
-      name: 'recommend',
-      component: () => import('./views/Recommend.vue'),
-    },
-    {
       path: '/shoppingcart',
       name: 'shoppingcart',
       component: () => import('./views/ShoppingCart.vue'),

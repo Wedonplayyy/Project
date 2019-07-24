@@ -1,25 +1,61 @@
 <template>
     <div class="container">
-      <div style="height:45px;">
-        <van-nav-bar
-          fixed="true"
-          title="商品详情"
-          left-text="返回"
-          left-arrow
-          @click-left="onClickLeft"
-        />
-      </div>
+<!--      <div style="height:45px;">-->
+<!--        <van-nav-bar-->
+<!--          fixed="true"-->
+<!--          title="商品详情"-->
+<!--          left-text="返回"-->
+<!--          left-arrow-->
+<!--          @click-left="onClickLeft"-->
+<!--        />-->
+<!--      </div>-->
 <!--      <div class="pic" v-html="this.data.detail">-->
 <!--      </div>-->
 
       <div class="swipe">
         <van-swipe :autoplay="3000" indicator-color="white">
-          <van-swipe-item v-for="(item,index) in this.str"
-          :key="index">
-            <img :src="item" width="100%" height="400px;">
+          <van-swipe-item>
+            <img :src="this.data.image" width="100%" height="100%">
+          </van-swipe-item>
+          <van-swipe-item>
+            <img :src="this.data.image" width="100%" height="100%">
           </van-swipe-item>
         </van-swipe>
       </div>
+      <div class="info1">
+        <div class="goodname">
+          {{this.data.name}}
+        </div>
+        <div class="goodprice">
+          ￥{{this.data.present_price}}
+          <div style="margin:0px 0px 0px 15px;font-size: 15px;color: grey;">
+            <del>￥{{this.data.orl_price}}</del>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="info2">
+          <div>运费:0</div>
+          <div>剩余数量:10000</div>
+          <div>收藏
+            <div>
+              <van-icon name="like-o" />
+            </div>
+          </div>
+        </div>
+      </div>
+        <div>
+          <van-tabs v-model="active">
+            <van-tab title="商品详情">
+              <div class="pic" v-html="this.data.detail">
+              </div>
+            </van-tab>
+            <van-tab title="商品评论">
+              商品评论
+            </van-tab>
+          </van-tabs>
+        </div>
+
       <van-goods-action>
         <van-goods-action-icon
           icon="chat-o"
@@ -44,14 +80,7 @@
           text="立即购买"
         />
       </van-goods-action>
-      <div class="info">
-        <div class="goodname">
-          {{this.data.name}}
-        </div>
-        <div class="goodprice">
-          ￥{{this.data.present_price}}
-        </div>
-      </div>
+
       <div class="footer"></div>
     </div>
 </template>
@@ -63,6 +92,7 @@
         props: {},
         data() {
             return {
+              active:0,
               data:{},
               id:'',
               str:[]
@@ -76,10 +106,11 @@
             this.$router.push({
               path:'/shoppingcart'
             })
+            this.$store.commit('set_tabActive',2)
           }
         },
         mounted() {
-          this.id = this.$store.state.selectedId ;
+          this.id = this.$store.state.selectedSubId ;
           this.$axios.req('api/goods/one?id='+this.id)
             .then((res)=>{
               if(res){
@@ -110,13 +141,20 @@
   .swipe{
     margin-top: 2px;
   }
-  .info{
-    /*flex-direction: column;*/
+  .info1{
     align-items: center;
-    /*width:100%;*/
     height:70px;
     font-size: 16px;
     border:1px solid #eeeeee;
+  }
+  .info2{
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+    height:30px;
+    font-size: 12px;
+    border:1px solid #eeeeee;
+    justify-content: space-between;
   }
   .goodname{
     margin:10px 0px 0px 10px;
