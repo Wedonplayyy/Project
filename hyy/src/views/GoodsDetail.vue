@@ -37,10 +37,11 @@
         <div class="info2">
           <div>运费:0</div>
           <div>剩余数量:10000</div>
-          <div>收藏
-            <div>
-              <van-icon name="like-o" />
+          <div style="display: flex">
+            <div style="margin: 0px 5px">
+              收藏
             </div>
+              <van-icon name="like-o" size="16px"/>
           </div>
         </div>
       </div>
