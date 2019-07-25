@@ -7,6 +7,7 @@ import axios from 'axios'
 import http from './http'
 import 'lib-flexible'
 import 'vant/lib/index.css'
+import BScroll from 'better-scroll'
 import VueResource from 'vue-resource'
 
 Vue.prototype.$axios = http

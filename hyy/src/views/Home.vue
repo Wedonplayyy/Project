@@ -19,10 +19,8 @@ author:hyy
     <div class="flex-container">
       <div class="box">
         <van-dropdown-menu class="box1">
-          <van-dropdown-item />
-          <!--            v-model="" -->
-          <!--          :options="" -->
-          <!--          />-->
+          <van-dropdown-item
+            :options="this.cityName"/>
         </van-dropdown-menu>
       </div>
       <div class="box2" >
@@ -42,7 +40,7 @@ author:hyy
     <div class="swipe">
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(item, index) in this.Redata.slides" :key="item.goodsId">
-          <img :src="item.image" width="100%" height="200px"/>
+          <img :src="item.image" width="100%" height="200px" @click="toGoodsDetail(item.goodsId)"/>
         </van-swipe-item>
       </van-swipe>
     </div>
@@ -74,7 +72,7 @@ author:hyy
         <li v-for = "(item) in this.Redata.recommend" :key="item.goodsId">
           <div>
             <div style="height:123px">
-              <img :src="item.image" width="100%" >
+              <img :src="item.image" width="100%" @click="toGoodsDetail(item.goodsId)">
             </div>
             <div class="box3">{{item.goodsName}}</div>
             <div class="box4">
@@ -94,7 +92,7 @@ author:hyy
            class="classObject"
            :class="{classObject1: index === 0}"
            :key="item.goodsId">
-        <img :src="item.image" width="100%" height="100%">
+        <img :src="item.image" width="100%" height="100%" @click="toGoodsDetail(item.goodsId)">
       </div>
     </div>
 
@@ -105,7 +103,7 @@ author:hyy
            class="classObject"
            :class="{classObject1: index === 0}"
            :key="item.goodsId">
-        <img :src="item.image" width="100%" height="100%">
+        <img :src="item.image" width="100%" height="100%" @click="toGoodsDetail(item.goodsId)">
       </div>
     </div>
 
@@ -116,7 +114,7 @@ author:hyy
              class="classObject"
              :class="{classObject1: index === 0}"
              :key="item.goodsId">
-          <img :src="item.image" width="100%" height="100%">
+          <img :src="item.image" width="100%" height="100%" @click="toGoodsDetail(item.goodsId)">
         </div>
       </div>
 
@@ -125,7 +123,7 @@ author:hyy
     <div class="hotgoods">
       <div v-for="(item,index) in this.Redata.hotGoods"
            :key="item.goodsId">
-        <img :src="item.image" width="100%" height="auto">
+        <img :src="item.image" width="100%" height="auto" @click="toGoodsDetail(item.goodsId)">
         <div class="box5">
             {{item.name}}<br>
           ￥{{item.mallPrice}}
@@ -148,6 +146,11 @@ author:hyy
     props: {},
     data() {
       return {
+        cityName:[
+          { text: '全部商品', value: 0 },
+          { text: '新款商品', value: 1 },
+          { text: '活动商品', value: 2 }
+        ],
         text:'',//搜索框输入内容
         list:[],//搜索结
         Redata:{},
@@ -302,7 +305,7 @@ author:hyy
   .floor{
     display: grid;
     grid-template-columns: 50%  50%;
-    grid-template-rows: 110px 110px 110px;
+    grid-template-rows: 100px 100px 100px;
     /*gird-auto-flow:row;*/
   }
   .hotgoods{
