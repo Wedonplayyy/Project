@@ -103,9 +103,12 @@
 </template>
 
 <script>
+    import {Dialog} from "vant";
     export default {
         name: "GoodsDetail",
-        components: {},
+        components: {
+          [Dialog.Component.name]: Dialog.Component
+        },
         props: {},
         data() {
             return {
@@ -126,19 +129,25 @@
             if(
               this.$store.state.user.keeplogin === 0
             ){
-              this.$router.push({
-                path:'/login'
-              })
+              Dialog.alert({
+                title: '提示',
+                message: '请先登录！'
+              }).then(() => {
+                this.$router.push({
+                  path:'/login'
+                })
+              });
+
             }else{
               if(this.text==='收藏'){
                 this.text='取消收藏';
                 this.name='like';
                 console.log(this.text);
-                this.
                 this.$toast('收藏成功！');
               }else{
                 this.text='收藏';
                 this.name='like-o';
+                this.$toast('取消收藏成功！');
               }
             }
           },

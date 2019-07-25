@@ -1,6 +1,21 @@
-/* eslint-disable */
+/* eslint-disable
+author:hyy
+*/
 <template>
   <div class="container">
+<!--    搜索弹出层  -->
+    <van-popup v-model="show"
+               :lazy-render="true"
+               position="top"
+               :style="{ height: '50%' }"
+               v-if="this.list.length!==0">
+      <van-cell-group v-if="this.list.length!==0">
+        <van-cell
+          v-for="(item) in this.list"
+          :title="item.name"
+        @click="toGoodsDetail(item.id)"/>
+      </van-cell-group>
+    </van-popup>
     <div class="flex-container">
       <div class="box">
         <van-dropdown-menu class="box1">
@@ -16,6 +31,7 @@
           show-action
           shape="round"
           @search="onSearch"
+          v-model="text"
         >
           <div slot="action" @click="onSearch">搜索</div>
         </van-search>
@@ -126,24 +142,53 @@
   import BScroll from 'better-scroll'
   export default {
     name: 'Home',
-    components: {},
+    components: {
+
+    },
     props: {},
     data() {
       return {
+        text:'',//搜索框输入内容
+        list:[],//搜索结
         Redata:{},
-        floor1:{},
+        show:false
       };
     },
     methods: {
+      showPopup(){
+        this.show = true;
+      },
+      toGoodsDetail(id){
+        this.$router.push({
+          path:'/detail'
+        })
+        this.$store.commit('set_SelectedSubId',id)
+      },
       set(id) {
         this.$store.commit('set_num',id)
         this.$store.commit('set_tabActive',1)
       },
-      onSearch(){},
-      click(id){
-      }
+      onSearch(){
+        if(this.text.length!==0){
+          this.$axios.req('api/search', {value:this.text,page:1})
+            .then((res) => {
+              if(res){
+                this.showPopup();
+                if(res.data.data.list){
+                  this.list = res.data.data.list;
+                  console.log(this.list);
+                }
+              }
+            }).catch((err) => {
+            console.log(err);
+          });
+        }else{
+          this.$notify({message:"请输入内容！",duration:1500});
+        }
+      },
     },
     mounted() {
+      console.log(this.text.length);
       this.$nextTick(() => {
         new BScroll(this.$refs.wrapper, {
           startX:true,

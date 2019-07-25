@@ -30,8 +30,8 @@
             />
           </van-cell-group>
           <div style="display: flex;width:100%;height:200px;">
-            <button style="margin:  auto;width:50px;height:50px;" @click="login">登录</button>
-            <button style="margin:  auto;width:50px;height:50px;" @click="register">注册</button>
+            <van-button type="primary" @click="login">登录</van-button>
+            <van-button type="info" @click="register">注册</van-button>
           </div>
 
         </div>
@@ -42,9 +42,13 @@
 </template>
 
 <script>
+    import {Dialog} from "vant";
+
     export default {
         name: "Login",
-        components: {},
+        components: {
+          [Dialog.Component.name]: Dialog.Component
+        },
         props: {},
         data() {
             return {
@@ -57,9 +61,26 @@
             this.$router.back(-1);
           },
           login(){
-            this.$store.commit('set_keeplogin',1);
-            console.log(this.$store.state.user.keeplogin);
-            this.$router.back(-1);
+            if (!this.username) {
+              Dialog.alert({
+                title: '提示',
+                message: '请输入用户名！'
+              }).then(() => {
+                return;
+              });
+            }
+            else if (!this.password) {
+              Dialog.alert({
+                title: '提示',
+                message: '请输入密码！'
+              }).then(() => {
+                return;
+              });
+            }else{
+              this.$store.commit('set_keeplogin',1);
+              console.log(this.$store.state.user.keeplogin);
+              this.$router.back(-1);
+            }
           },
           register(){
             login();

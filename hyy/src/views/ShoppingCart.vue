@@ -1,8 +1,12 @@
 <template>
     <div class="container">
-      <div class="header">
-        <p>购物车</p>
-      </div>
+      <van-nav-bar
+        fixed
+        title="购物车"
+        left-text="返回"
+        left-arrow
+        @click-left="onClickLeft"
+      />
     </div>
 
 </template>
@@ -17,9 +21,19 @@
             }
         },
         methods: {
+          onClickLeft(){
+            this.$router.back(-1);
+          },
         },
         mounted() {
-
+          this.$axios.req('api/getCard', {})
+            .then((res) => {
+              if(res){
+                console.log(res);
+              }
+            }).catch((err) => {
+            console.log(err);
+          });
         },
         created() {
 
