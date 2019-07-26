@@ -31,7 +31,20 @@
       }
     },
     mounted() {
-
+      switch(this.$route.name){
+        case 'home':
+          this.tab = 0;
+          break;
+        case 'category':
+          this.tab = 1;
+          break;
+        case 'shoppingcart':
+          this.tab = 2;
+          break;
+        case 'user':
+          this.tab = 3;
+          break;
+      };
     },
     updated() {
         this.tab = this.$store.state.tabActive ;

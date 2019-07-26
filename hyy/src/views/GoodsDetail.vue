@@ -80,7 +80,6 @@
             text="客服"
           />
           <van-goods-action-icon
-            info="5"
             icon="cart-o"
             text="购物车"
             @click="showCart"
@@ -103,7 +102,7 @@
 </template>
 
 <script>
-    import {Dialog} from "vant";
+  import {Dialog, Toast} from "vant";
     export default {
         name: "GoodsDetail",
         components: {
@@ -152,6 +151,10 @@
             }
           },
           showCart(){
+            // Toast.loading({
+            //   mask: true,
+            //   message: '加载中...'
+            // });
             this.$router.push({
               path:'/shoppingcart'
             })

@@ -5,13 +5,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    tabActive:0,//底部标签栏默认选中首页
-    activeKey:0,//首页选择的分类
-    str:'2c9f6c946016ea9b016016f79c8e0000',//分类id
+    tabActive:0,//底部标签栏选中项 默认选中首页
+    activeKey:0,//首页选择的分类 默认选择第一个
+    str:'2c9f6c946016ea9b016016f79c8e0000',//分类id 默认选择第一个美国车厘子
     selectedSubId:"",//分类中点击的商品
     shopCart:{},//购物车属性
-    user:{
+    user:{//用户属性
       keeplogin:0,//登录状态
+      username:''//用户名
     }//用户属性
   },
   mutations: {
@@ -29,6 +30,9 @@ export default new Vuex.Store({
     },
     ['set_keeplogin'](state,data){
       state.user.keeplogin = data
+    },
+    ['set_loginname'](state,data){
+      state.user.username = data
     }
   },
   actions: {

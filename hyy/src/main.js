@@ -9,9 +9,12 @@ import 'lib-flexible'
 import 'vant/lib/index.css'
 import BScroll from 'better-scroll'
 import VueResource from 'vue-resource'
+import Toast from "vant/es/toast";
 
 Vue.prototype.$axios = http
 Vue.use(Vant)
+Vue.use(Toast)
+
 Vue.config.productionTip = false
 
 axios.defaults.timeout = 10000

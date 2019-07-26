@@ -4,16 +4,27 @@
           <p>会员中心</p>
         </div>
       <div class = 'bg-container'>
-        <div class="bg-item">
+        <div class="bg-item" >
           <div class="tx">
-            <img src="../assets/tx.jpg">
+            <img src="../assets/tx.jpg" >
           </div>
-          <p>
-            欢迎你
-          </p>
-          <p style="font-size: 15px">
-            退出登录
-          </p>
+          <div v-if="this.$store.state.user.keeplogin!==0">
+            <p >
+              欢迎你,{{this.username}}
+            </p>
+            <p style="font-size: 15px" @click="logout">
+              退出登录
+            </p>
+          </div>
+          <div v-else>
+            <p >
+              未登录
+            </p>
+            <p style="font-size: 15px">
+              <router-link to="/login">登录/注册</router-link>
+            </p>
+          </div>
+
         </div>
       </div>
 
@@ -101,16 +112,38 @@
 </template>
 
 <script>
+  import {Toast} from "vant";
+
   export default {
     name: 'User',
     components: {},
     props: {},
     data() {
-      return {};
+      return {
+        username:''//用户名
+      };
     },
-    methods: {},
+    methods: {
+      logout(){
+        Toast( '退出账户中...');
+        this.$axios.req('api/loginOut',{})
+          .then((res)=>{
+            if(res){
+              this.$store.commit('set_keeplogin', 0);
+              console.log(res);
+              console.log(this.$store.state.user.keeplogin);
+            }
+          }).catch((err)=>{
+          console.log(err);
+        })
+      },//登出
+    },
     mounted() {
-
+      console.log(this.$store.state.user.keeplogin);
+      if(this.$store.state.user.keeplogin!==0){
+        this.username = this.$store.state.user.username;
+        console.log(this.username);
+      }
     },
     created() {
 
@@ -141,20 +174,21 @@
     font-size:15px;
   }
   .tx{
-    border-radius:50%
+    border-radius:50%;
+    align-self:center;
   }
   .bg-container{
-    display: -webkit-flex;
     display: flex;
     background-color: #e30c7b;
     width:375px;
     height:220px;
-
     color: white;
     font-size: 22px;
   }
   .bg-item{
     margin: auto;
+    display: flex;
+    flex-direction: column;
   }
   .bg-item p{
     text-align: center;
@@ -167,7 +201,7 @@
     overflow: hidden;
   }
   .tx img{
-    width:100%
+    width:100%;
   }
   .item{
     display:flex;
@@ -182,7 +216,6 @@
     width:150px;
   }
   .icon{
-    /*width:100%;*/
     height:100%;
     display:flex;
     justify-content: flex-start;

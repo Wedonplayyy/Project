@@ -7,6 +7,17 @@
         left-arrow
         @click-left="onClickLeft"
       />
+      <div v-if="this.keeplogin!==1" class="text">
+        <div>
+          您还尚未<router-link to="/login">登录</router-link>~
+        </div>
+      </div>
+      <div v-else class="text">
+        <div v-if="this.datalist.length===0">
+         购物车里空空如也~
+        </div>
+        <div v-else></div>
+      </div>
     </div>
 
 </template>
@@ -18,6 +29,9 @@
         props: {},
         data() {
             return {
+              data:'',//post返回数据
+              keeplogin:0,//登录状态
+              datalist:[]//收藏商品列表
             }
         },
         methods: {
@@ -26,10 +40,16 @@
           },
         },
         mounted() {
+
+          this.keeplogin=this.$store.state.user.keeplogin;
           this.$axios.req('api/getCard', {})
             .then((res) => {
               if(res){
                 console.log(res);
+                this.data = res.data;
+                console.log(this.data.shopList.length);
+                console.log(this.keeplogin);
+                this.datalist = this.data.shopList;
               }
             }).catch((err) => {
             console.log(err);
@@ -50,17 +70,13 @@
     background-color: #eeeeee;
     height:667px;
   }
-  .header{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    margin:0 auto;
+  .text{
     width:100%;
-    height: 46px;
+    height:500px;
+    display: flex;
+    margin-top: 46px;
     text-align: center;
-  }
-  .header p{
-    font-size:16px;
+    align-items:center;
+    justify-content: center;
   }
 </style>
