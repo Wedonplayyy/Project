@@ -20,16 +20,16 @@
             <van-checkbox-group class="card-goods" v-model="checkedGoods">
               <van-checkbox
                 class="card-goods__item"
-                v-for="item in goods"
-                :key="item.id"
-                :name="item.id"
+                v-for="item in this.datalist"
+                :key="item.cid"
+                :name="item.cid"
               >
                 <van-card
-                  :title="item.title"
+                  :title="item.name"
                   :desc="item.desc"
-                  :num="item.num"
-                  :price="formatPrice(item.price)"
-                  :thumb="item.thumb"
+                  :num="item.count"
+                  :price="item.present_price"
+                  :thumb="item.image_path"
                 />
               </van-checkbox>
             </van-checkbox-group>
@@ -60,7 +60,7 @@
             return {
               data:'',//post返回数据
               keeplogin:0,//登录状态
-              datalist:[],//收藏商品列表
+              datalist:[],//购物车商品列表
               checkedGoods: ['1', '2', '3'],
               goods: [{
                 id: '1',
@@ -98,16 +98,19 @@
           }
         },
         mounted() {
-
           this.keeplogin=this.$store.state.user.keeplogin;
           this.$axios.req('api/getCard', {})
             .then((res) => {
-              if(res){
-                console.log(res);
+              console.log(res.data);
+              if(res.data.code > 0){
+                // console.log(res);
                 this.data = res.data;
-                console.log(this.data.shopList.length);
-                console.log(this.keeplogin);
+                console.log('购物车有'+this.data.shopList.length);
+                console.log('登录状态'+this.keeplogin);
                 this.datalist = this.data.shopList;
+              }
+              else{
+                console.log(res.data.msg);
               }
             }).catch((err) => {
             console.log(err);
@@ -123,7 +126,7 @@
             return '结算' + (count ? `(${count})` : '');
           },
           totalPrice() {
-            return this.goods.reduce((total, item) => total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0), 0);
+            return this.datalist.reduce((total, item) => total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0), 0);
           }
         },
         watch: {},

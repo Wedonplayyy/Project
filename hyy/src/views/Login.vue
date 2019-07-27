@@ -132,7 +132,7 @@
               this.$axios.req('api/login', {nickname: this.username, password: this.password, verify: this.verify})
                 .then((res) => {
                   if (res) {
-                    if(res.data.code<0){
+                    if(res.data.code<0){//判断输入是否正确
                       Dialog.alert({
                         title: '提示',
                         message: res.data.msg,
@@ -140,22 +140,21 @@
                         return;
                       });
                     }else{
-                      Toast('登录成功！');
-                      console.log('登陆成功！welcome' + this.$store.state.user.username);
+                      Toast(res.data.msg);
                       this.$store.commit('set_keeplogin', 1);
                       this.$store.commit('set_loginname', this.username);
                       this.$axios.req('api/keeplogin', {})
                         .then((res) => {
                           if(res){
-                            console.log(res);
+                            console.log('welcome!' + res.data.userInfo.nickname);
                           }
                         }).catch((err) => {
                         console.log(err);
                       });
-                      console.log(this.$store.state.user.keeplogin);
+                      // console.log(this.$store.state.user.keeplogin);
                       this.$router.back(-1);
                     }
-                    console.log(res);
+                    // console.log(res);
                   }
                 }).catch((err) => {
                 console.log(err);
@@ -186,12 +185,12 @@
         },
         mounted() {
           this.$store.commit('set_tabActive',3)
-          console.log(this.$store.state.user.keeplogin);
+          // console.log(this.$store.state.user.keeplogin);
           this.$axios.req(this.getAverify())
             .then((res)=>{
               if(res){
                 this.verifyPic = res.data;
-                console.log(res);
+                // console.log(res);
               }
             }).catch((err)=>{
             console.log(err);

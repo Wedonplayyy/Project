@@ -125,12 +125,12 @@
     },
     methods: {
       logout(){
-        Toast( '退出账户中...');
+        // Toast( '退出账户中...');
         this.$axios.req('api/loginOut',{})
           .then((res)=>{
             if(res){
               this.$store.commit('set_keeplogin', 0);
-              console.log(res);
+              // console.log(res);
               console.log(this.$store.state.user.keeplogin);
             }
           }).catch((err)=>{
@@ -139,10 +139,10 @@
       },//登出
     },
     mounted() {
-      console.log(this.$store.state.user.keeplogin);
+      // console.log(this.$store.state.user.keeplogin);
       if(this.$store.state.user.keeplogin!==0){
         this.username = this.$store.state.user.username;
-        console.log(this.username);
+        // console.log(this.username);
       }
     },
     created() {

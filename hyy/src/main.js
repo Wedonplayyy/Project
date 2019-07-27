@@ -10,10 +10,9 @@ import 'vant/lib/index.css'
 import BScroll from 'better-scroll'
 import VueResource from 'vue-resource'
 import Toast from "vant/es/toast";
-
+import city from './assets/city'
 Vue.prototype.$axios = http
 Vue.use(Vant)
-Vue.use(Toast)
 
 Vue.config.productionTip = false
 
