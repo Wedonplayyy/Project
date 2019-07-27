@@ -19,8 +19,8 @@ author:hyy
     <div class="flex-container">
       <div class="box">
         <van-dropdown-menu class="box1">
-          <van-dropdown-item
-            :options="this.cityName"/>
+          <van-dropdown-item></van-dropdown-item>
+<!--            :options="this.cityName"/>-->
         </van-dropdown-menu>
       </div>
       <div class="box2" >
@@ -146,11 +146,6 @@ author:hyy
     props: {},
     data() {
       return {
-        cityName:[
-          { text: '全部商品', value: 0 },
-          { text: '新款商品', value: 1 },
-          { text: '活动商品', value: 2 }
-        ],
         text:'',//搜索框输入内容
         list:[],//搜索结
         Redata:{},
@@ -191,6 +186,7 @@ author:hyy
       },
     },
     mounted() {
+
       console.log(this.text.length);
       this.$nextTick(() => {
         new BScroll(this.$refs.wrapper, {

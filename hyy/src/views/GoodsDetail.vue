@@ -91,6 +91,7 @@
           <van-goods-action-button
             type="warning"
             text="加入购物车"
+            @click="addShop"
           />
           <van-goods-action-button
             type="danger"
@@ -102,6 +103,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import {Dialog, Toast} from "vant";
     export default {
         name: "GoodsDetail",
@@ -114,19 +116,20 @@
               text:'收藏',//收藏按钮文字
               color:'red',//收藏按钮颜色
               name:'like-o',//收藏按钮图标
-              active:0,
-              data:{},
-              id:'',
-              str:[]
+              active:0,//选中商品分类
+              data:{},//商品的goodsOne
+              id:'',//选中的商品sub_id
+              good:{},//商品详情页的商品对象
+              isCollection:0//
             }
         },
         methods: {
-          onClickLeft(){
+          onClickLeft(){//点击返回回到上一页
             this.$router.back(-1);
           },
-          collect(){
+          collect(){//收藏按键
             if(
-              this.$store.state.user.keeplogin === 0
+              this.$store.state.user.keeplogin === 0//判断是否登录
             ){
               Dialog.alert({
                 title: '提示',
@@ -136,29 +139,40 @@
                   path:'/login'
                 })
               });
-
             }else{
+
               if(this.text==='收藏'){
                 this.text='取消收藏';
                 this.name='like';
-                console.log(this.text);
+                console.log(this.good);
                 this.$toast('收藏成功！');
               }else{
+                this.$axios.req('api/cancelCollection',{id:this.id})
+                  .then((res)=>{
+                    console.log(res);
+                    this.$toast(res.data.msg);
+                  }).catch((err)=>{
+                  console.log(err);
+                });
                 this.text='收藏';
                 this.name='like-o';
-                this.$toast('取消收藏成功！');
               }
             }
           },
-          showCart(){
-            // Toast.loading({
-            //   mask: true,
-            //   message: '加载中...'
-            // });
+          showCart(){//购物车按钮
             this.$router.push({
               path:'/shoppingcart'
             })
             this.$store.commit('set_tabActive',2)
+          },
+          addShop(){
+            this.$axios.req('api/addShop',{id:this.id})
+              .then((res)=>{
+                console.log(res);
+                this.$toast(res.data.msg);
+              }).catch((err)=>{
+              console.log(err);
+            });
           }
         },
         mounted() {
@@ -166,11 +180,24 @@
           this.$axios.req('api/goods/one?id='+this.id)
             .then((res)=>{
               if(res){
+                this.good = res.data.goods;
                 this.data = res.data.goods.goodsOne;
-                this.str = this.data.detail;
-                let reg = /http:\/\/.*?(gif|png|jpg)/gi;
-                this.str = this.str.match(reg);
+                console.log(res);
               }
+            }).catch((err)=>{
+            console.log(err);
+          })
+          this.$axios.req('api/goods/one?id='+this.id+'&page=1')
+            .then((res)=>{
+              if(res){
+                console.log(res);
+              }
+            }).catch((err)=>{
+            console.log(err);
+          })
+          axios.post('api/isCollection',{id:this.id})
+            .then((res)=>{
+              console.log(res);
             }).catch((err)=>{
             console.log(err);
           })

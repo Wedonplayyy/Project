@@ -144,6 +144,14 @@
                       console.log('登陆成功！welcome' + this.$store.state.user.username);
                       this.$store.commit('set_keeplogin', 1);
                       this.$store.commit('set_loginname', this.username);
+                      this.$axios.req('api/keeplogin', {})
+                        .then((res) => {
+                          if(res){
+                            console.log(res);
+                          }
+                        }).catch((err) => {
+                        console.log(err);
+                      });
                       console.log(this.$store.state.user.keeplogin);
                       this.$router.back(-1);
                     }
