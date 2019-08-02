@@ -19,8 +19,9 @@ author:hyy
     <div class="flex-container">
       <div class="box">
         <van-dropdown-menu class="box1">
-          <van-dropdown-item></van-dropdown-item>
-<!--            :options="this.cityName"/>-->
+          <van-dropdown-item
+            v-model="value"
+            :options="this.city "/>
         </van-dropdown-menu>
       </div>
       <div class="box2" >
@@ -137,6 +138,7 @@ author:hyy
 </template>
 
 <script>
+  import city from '../assets/city.js'
   import BScroll from 'better-scroll'
   export default {
     name: 'Home',
@@ -147,9 +149,11 @@ author:hyy
     data() {
       return {
         text:'',//搜索框输入内容
-        list:[],//搜索结
-        Redata:{},
-        show:false
+        list:[],//搜索结果
+        Redata:{},//首页get请求
+        show:false,//点击搜索显示弹出框
+        value:0,//热门城市选中项
+        city:[]//热门城市列表
       };
     },
     methods: {
@@ -171,10 +175,14 @@ author:hyy
           this.$axios.req('api/search', {value:this.text,page:1})
             .then((res) => {
               if(res){
-                this.showPopup();
-                if(res.data.data.list){
+
+                if(res.data.data.list.length!==0){
+                  this.showPopup();
                   this.list = res.data.data.list;
                   console.log(this.list);
+                }
+                else{
+                  this.$notify({message:"未找到相关商品！",duration:1500});
                 }
               }
             }).catch((err) => {
@@ -186,8 +194,9 @@ author:hyy
       },
     },
     mounted() {
-
-      console.log(this.text.length);
+      for(let i in city.data.hotCities){
+        this.city.push({text:city.data.hotCities[i].name,value:i});
+      }
       this.$nextTick(() => {
         new BScroll(this.$refs.wrapper, {
           startX:true,
@@ -226,7 +235,7 @@ author:hyy
   }
   .box{
     /*选择城市*/
-    width: 25%;
+    width:  35%;
     /*height:120%;*/
   }
   .box1{
@@ -237,7 +246,7 @@ author:hyy
   .box2{
     -webkit-flex-direction: row-reverse;
     flex-direction: row-reverse;
-    width: 180%;
+    width: 150%;
     height:auto;
   }
   .swipe{

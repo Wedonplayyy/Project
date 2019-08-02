@@ -7,6 +7,7 @@
         left-arrow
         @click-left="onClickLeft"
       />
+
       <div v-if="this.keeplogin!==1" class="text">
         <div>
           您还尚未<router-link to="/login">登录</router-link>~
@@ -19,30 +20,37 @@
         <div v-else class="good">
             <van-checkbox-group class="card-goods" v-model="checkedGoods">
               <van-checkbox
+                v-model="checked">
+                <div class="grid-item" >{{this.text}}</div>
+              </van-checkbox>
+
+              <van-checkbox
                 class="card-goods__item"
                 v-for="item in this.datalist"
                 :key="item.cid"
                 :name="item.cid"
               >
-                <van-card
-                  :title="item.name"
-                  :desc="item.desc"
-                  :num="item.count"
-                  :price="item.present_price"
-                  :thumb="item.image_path"
-                />
+                <div class="grid-item">
+                  <div class="img">
+                    <img :src="item.image_path" width="100%">
+                  </div>
+                  <div class="grid-text">
+                    <div>
+                      {{item.name}}
+                    </div>
+                    <div style="display: flex">
+                      <div style="margin:20px 0px">
+                        ￥{{item.present_price}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </van-checkbox>
             </van-checkbox-group>
-            <van-submit-bar
-              :price="totalPrice"
-              :disabled="!checkedGoods.length"
-              :button-text="submitBarText"
-              @submit="onSubmit"
-            />
         </div>
+        <div class="footer"></div>
       </div>
     </div>
-
 </template>
 
 <script>
@@ -58,44 +66,18 @@
         props: {},
         data() {
             return {
+              text:'全选',
+              checked:false,//选择框
               data:'',//post返回数据
               keeplogin:0,//登录状态
               datalist:[],//购物车商品列表
-              checkedGoods: ['1', '2', '3'],
-              goods: [{
-                id: '1',
-                title: '进口香蕉',
-                desc: '约250g，2根',
-                price: 200,
-                num: 1,
-                thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/2f9a36046449dafb8608e99990b3c205.jpeg'
-              }, {
-                id: '2',
-                title: '陕西蜜梨',
-                desc: '约600g',
-                price: 690,
-                num: 1,
-                thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/f6aabd6ac5521195e01e8e89ee9fc63f.jpeg'
-              }, {
-                id: '3',
-                title: '美国伽力果',
-                desc: '约680g/3个',
-                price: 2680,
-                num: 1,
-                thumb: 'https://img.yzcdn.cn/public_files/2017/10/24/320454216bbe9e25c7651e1fa51b31fd.jpeg'
-              }]
+              checkedGoods: [ ],
             };
         },
         methods: {
           onClickLeft(){
             this.$router.back(-1);
           },
-          formatPrice(price) {
-            return (price / 100).toFixed(2);
-          },
-          onSubmit() {
-            Toast('点击结算');
-          }
         },
         mounted() {
           this.keeplogin=this.$store.state.user.keeplogin;
@@ -105,6 +87,7 @@
               if(res.data.code > 0){
                 // console.log(res);
                 this.data = res.data;
+                console.log(this.data);
                 console.log('购物车有'+this.data.shopList.length);
                 console.log('登录状态'+this.keeplogin);
                 this.datalist = this.data.shopList;
@@ -121,13 +104,6 @@
         },
         filters: {},
         computed: {
-          submitBarText() {
-            const count = this.checkedGoods.length;
-            return '结算' + (count ? `(${count})` : '');
-          },
-          totalPrice() {
-            return this.datalist.reduce((total, item) => total + (this.checkedGoods.indexOf(item.id) !== -1 ? item.price : 0), 0);
-          }
         },
         watch: {},
         directives: {}
@@ -136,16 +112,39 @@
 
 <style scoped>
   .container{
-    background-color: #eeeeee;
-    height:667px;
+    /*background-color: #eeeeee;*/
+    /*height:1000px;*/
   }
   .text{
-    width:100%;
-    height:500px;
-    display: flex;
+  }
+  .good{
     margin-top: 46px;
-    text-align: center;
-    align-items:center;
-    justify-content: center;
+    margin-left: 15px;
+  }
+  .grid-item{
+    background-color: white;
+    display: flex;
+    height:100px;
+    padding:10px 15px 10px 10px;
+    align-items: center;
+    font-size: 16px;
+  }
+  .grid-text{
+    margin:0px 0px 0px 10px;
+    font-size: 14px;
+    color: red;
+  }
+  .img{
+    border: solid 1px #eeeeee;
+    width:70px;
+    height:70px;
+  }
+  .img img{
+    width:70px;
+    height:70px;
+  }
+  .footer{
+    width:100%;
+    height:100px;
   }
 </style>

@@ -96,9 +96,18 @@
           <van-goods-action-button
             type="danger"
             text="立即购买"
+            @click="buy"
           />
         </van-goods-action>
       </div>
+      <van-sku
+        v-model="show"
+        :sku="sku"
+        :goods="goods"
+        :hide-stock="sku.hide_stock"
+        :show-add-cart-btn="sku.hide_stock"
+        @buy-clicked="onBuyClicked"
+      />
     </div>
 </template>
 
@@ -120,10 +129,29 @@
               data:{},//商品的goodsOne
               id:'',//选中的商品sub_id
               good:{},//商品详情页的商品对象
-              isCollection:0//
+              isCollection:0,//
+              show: false,
+
+              sku: {
+                // 所有sku规格类目与其值的从属关系，比如商品有颜色和尺码两大类规格，颜色下面又有红色和蓝色两个规格值。
+                // 可以理解为一个商品可以有多个规格类目，一个规格类目下可以有多个规格值。
+                tree: [],
+                list: [],
+                price: '1.00', // 默认价格（单位元）
+                stock_num: 10000, // 商品总库存
+                none_sku: false, // 是否无规格商品
+                hide_stock: false // 是否隐藏剩余库存
+              },
+              goods: {
+                // 商品标题
+                title: ' ',
+                // 默认商品 sku 缩略图
+                picture: ' '
+              },
             }
         },
         methods: {
+          onBuyClicked(){},
           onClickLeft(){//点击返回回到上一页
             this.$router.back(-1);
           },
@@ -170,9 +198,17 @@
               .then((res)=>{
                 console.log(res);
                 this.$toast(res.data.msg);
+                if(res.data.code===-1){
+                  this.$router.push({
+                    path:'/login'
+                  })
+                }
               }).catch((err)=>{
               console.log(err);
             });
+          },
+          buy(){
+            this.show = true;
           }
         },
         mounted() {
@@ -182,6 +218,9 @@
               if(res){
                 this.good = res.data.goods;
                 this.data = res.data.goods.goodsOne;
+                this.goods.title = this.data.name;
+                this.goods.picture = this.data.image;
+                this.sku.price = this.data.present_price;
                 console.log(res);
               }
             }).catch((err)=>{
