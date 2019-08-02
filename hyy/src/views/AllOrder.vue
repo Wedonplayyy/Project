@@ -1,0 +1,42 @@
+<template>
+  <div class="container">
+    <van-nav-bar
+      fixed
+      title="全部订单"
+      left-text="返回"
+      left-arrow
+      @click-left="onClickLeft"
+    />
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "AllOrder",
+    components: {
+    },
+    props: {},
+    data() {
+      return {
+      };
+    },
+    methods: {
+      onClickLeft(){//点击返回回到上一页
+        this.$router.back(-1);
+      },
+    },
+    mounted() {
+    },
+    created() {
+
+    },
+    filters: {},
+    computed: {
+    },
+    watch: {},
+    directives: {}
+  }
+</script>
+
+<style scoped>
+</style>

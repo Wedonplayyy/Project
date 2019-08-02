@@ -52,7 +52,7 @@
           />
         </van-grid>
 
-        <div class="item">
+        <div class="item" @click="toAllOrder">
 <!--          全部订单-->
           <div class="icon">
             <van-icon name="orders-o"></van-icon>
@@ -61,13 +61,13 @@
             全部订单
           </div>
           <div class="arrow">
-            <van-icon name="arrow"></van-icon>
+            <van-icon name="arrow" to></van-icon>
           </div>
         </div>
 
 
-        <div class="item">
-          <!--          全部订单-->
+        <div class="item" @click="toCollection">
+<!--          收藏商品-->
           <div class="icon">
             <van-icon name="star-o"></van-icon>
           </div>
@@ -81,7 +81,7 @@
 
 
         <div class="item">
-          <!--          全部订单-->
+          <!--          地址管理-->
           <div class="icon">
             <van-icon name="edit"></van-icon>
           </div>
@@ -95,7 +95,7 @@
 
 
         <div class="item">
-          <!--          全部订单-->
+          <!--          最近浏览-->
           <div class="icon">
             <van-icon name="search"></van-icon>
           </div>
@@ -137,6 +137,16 @@
           console.log(err);
         })
       },//登出
+      toAllOrder(){
+        this.$router.push({
+          path:'/allorder'
+        })
+      },
+      toCollection(){
+        this.$router.push({
+          path:'/collection'
+        })
+      },
     },
     mounted() {
       // console.log(this.$store.state.user.keeplogin);

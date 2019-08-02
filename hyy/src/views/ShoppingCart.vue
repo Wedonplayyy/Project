@@ -18,14 +18,18 @@
          购物车里空空如也~
         </div>
         <div v-else class="good">
-            <van-checkbox-group class="card-goods" v-model="checkedGoods">
+            <van-checkbox-group
+              class="card-goods"
+              v-model="checkedGoods">
               <van-checkbox
+                label-disabled="true"
                 v-model="checked">
                 <div class="grid-item" >{{this.text}}</div>
               </van-checkbox>
 
               <van-checkbox
                 class="card-goods__item"
+                label-disabled="true"
                 v-for="item in this.datalist"
                 :key="item.cid"
                 :name="item.cid"
@@ -35,12 +39,17 @@
                     <img :src="item.image_path" width="100%">
                   </div>
                   <div class="grid-text">
-                    <div>
-                      {{item.name}}
+                    <div style=" color: red;margin-top: 15px">
+                      {{item.name}}￥{{item.present_price}}
                     </div>
-                    <div style="display: flex">
-                      <div style="margin:20px 0px">
+                    <div style="display: flex;justify-content: space-between;">
+                      <div style="margin:20px 0px;display: flex; color: red; ">
                         ￥{{item.present_price}}
+                      </div>
+                      <div style="margin:20px 0px;display: flex;align-items: center" >
+                        <van-icon name="add-o" size="18px" @click="edit(item.count-1,item.cid,item.mallPrice)" />
+                        <input v-model="count" :placeholder="item.count">
+                        <van-icon name="add-o" size="18px" @click="edit(item.count+1,item.cid,item.mallPrice)"/>
                       </div>
                     </div>
                   </div>
@@ -78,6 +87,18 @@
           onClickLeft(){
             this.$router.back(-1);
           },
+          edit(count, id, mallPrice){
+            this.$axios.req('api/editCart',{ count:count,
+              id:id,
+              mallPrice:mallPrice})
+              .then((res)=>{
+                console.log(res);
+                this.$toast(res.data.msg);
+              }).catch((err)=>{
+              console.log(err);
+            });
+            this.mounted();
+          }
         },
         mounted() {
           this.keeplogin=this.$store.state.user.keeplogin;
@@ -124,6 +145,7 @@
   .grid-item{
     background-color: white;
     display: flex;
+    width: 305px;
     height:100px;
     padding:10px 15px 10px 10px;
     align-items: center;
@@ -131,8 +153,8 @@
   }
   .grid-text{
     margin:0px 0px 0px 10px;
+    width:223px;
     font-size: 14px;
-    color: red;
   }
   .img{
     border: solid 1px #eeeeee;

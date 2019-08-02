@@ -38,5 +38,15 @@ export default new Router({
       name: 'Login',
       component: () => import('./views/Login.vue'),
     },
+    {
+      path: '/allorder',
+      name: 'AllOrder',
+      component: () => import('./views/AllOrder.vue'),
+    },
+    {
+      path: '/collection',
+      name: 'Collection',
+      component: () => import('./views/Collection.vue'),
+    },
   ],
 });

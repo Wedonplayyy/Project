@@ -170,10 +170,16 @@
             }else{
 
               if(this.text==='收藏'){
+                this.$axios.req('api/collection',this.data)
+                  .then((res)=>{
+                    console.log(res);
+                    this.$toast(res.data.msg);
+                  }).catch((err)=>{
+                  console.log(err);
+                });
                 this.text='取消收藏';
                 this.name='like';
                 console.log(this.good);
-                this.$toast('收藏成功！');
               }else{
                 this.$axios.req('api/cancelCollection',{id:this.id})
                   .then((res)=>{
