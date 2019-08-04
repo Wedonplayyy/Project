@@ -48,5 +48,35 @@ export default new Router({
       name: 'Collection',
       component: () => import('./views/Collection.vue'),
     },
+    {
+      path: '/address',
+      name: 'Address',
+      component: () => import('./views/Address.vue'),
+    },
+    {
+      path: '/editaddress',
+      name: 'EditAddress',
+      component: () => import('./views/EditAddress.vue'),
+    },
+    {
+      path: '/addaddress',
+      name: 'AddAddress',
+      component: () => import('./views/AddAddress.vue'),
+    },
+    {
+      path: '/personinfo',
+      name: 'PersonInfo',
+      component: () => import('./views/PersonInfo.vue'),
+    },
+    {
+      path: '/recentlyview',
+      name: 'RecentlyView',
+      component: () => import('./views/RecentlyView.vue'),
+    },
+    {
+      path: '/shoppingPayMent',
+      name: 'ShoppingPayMent',
+      component: () => import('./views/ShoppingPayMent.vue'),
+    },
   ],
 });

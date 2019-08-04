@@ -103,6 +103,7 @@
               checkedGoods: [ ],//复选框状态，默认全选
               countList:[],//数量列表
               totalPrice:0,//总价
+              defaultAdd:{},//默认地址
             };
         },
         methods: {
@@ -129,6 +130,29 @@
             console.log(this.checkedGoods);
           },
           toPay(){//结算
+            this.$store.commit('set_order',{
+              address:this.defaultAdd.address+this.defaultAdd.addressDetail,
+              tel:this.defaultAdd.tel,
+              orderId:this.checkedGoods,
+              totalPrice:this.totalPrice,
+              idDirect:false,
+              count:this.checkedGoods.length,
+            });
+            console.log(this.$store.state.order);
+            //   axios.post('api/order',{
+          //     address:this.defaultAdd.address+this.defaultAdd.addressDetail,
+          //     tel:this.defaultAdd.tel,
+          //     orderId:this.checkedGoods,
+          //     totalPrice:this.totalPrice,
+          //     idDirect:false,
+          //     count:this.checkedGoods.length,
+          // })
+          //     .then((res) =>{
+          //       console.log(res);
+          //       this.$toast(res.data.msg);
+          //     }).catch((err) =>{
+          //     console.log(err);
+          //   })
             this.$router.push({
               path:'/ShoppingPayMent'
             })
@@ -153,8 +177,7 @@
             this.init();
           },
           init(){//初始化
-            this.keeplogin=this.$store.state.user.keeplogin;
-            this.$axios.req('api/getCard', {})
+            this.$axios.req('api/getCard', {})//查询购物车
               .then((res) => {
                 console.log(res.data);
                 if(res.data.code > 0){
@@ -164,8 +187,9 @@
                   console.log('购物车有'+this.data.shopList.length);
                   console.log('登录状态'+this.keeplogin);
                   this.datalist = this.data.shopList;
-                  for(let i in this.data.shopList){
-                    this.checkedGoods.push(this.data.shopList[i].cid)
+                  this.checkedGoods = [];
+                  for(let i in res.data.shopList){
+                    this.checkedGoods.push(res.data.shopList[i].cid)
                   }
                   let set = new Set(this.checkedGoods);
                   this.checkedGoods = Array.from(set);
@@ -177,10 +201,20 @@
               }).catch((err) => {
               console.log(err);
             });
+            this.$axios.req('api/getDefaultAddress')
+              .then((res) =>{
+              console.log(res);
+              this.defaultAdd=res.data.defaultAdd;
+            }).catch((err) =>{
+              console.log(err);
+            })
           }
         },
         mounted() {
-          this.init();
+          this.keeplogin=this.$store.state.user.keeplogin;
+          if(this.keeplogin!==0){
+            this.init();
+          }
 
         },
         created() {
@@ -193,7 +227,8 @@
             return '结算' + (count ? `(${count})` : '');
           },
           showTotalPrice(){
-            return this.datalist.reduce((total, item) => total + (this.checkedGoods.indexOf(item.cid) !== -1 ? item.present_price*item.count : 0), 0);
+            this.totalPrice=this.datalist.reduce((total, item) => total + (this.checkedGoods.indexOf(item.cid) !== -1 ? item.present_price*item.count : 0), 0);
+            return this.totalPrice;
           }
         },
         watch: {},
@@ -249,5 +284,6 @@
   input{
     border: none;
     width: 30px;
+    background-color: #eeeeee;
   }
 </style>

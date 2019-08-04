@@ -227,19 +227,19 @@
                 this.goods.title = this.data.name;
                 this.goods.picture = this.data.image;
                 this.sku.price = this.data.present_price;
-                console.log(res);
+                console.log(this.data);
               }
             }).catch((err)=>{
             console.log(err);
           })
-          this.$axios.req('api/goods/one?id='+this.id+'&page=1')
-            .then((res)=>{
-              if(res){
-                console.log(res);
-              }
-            }).catch((err)=>{
-            console.log(err);
-          })
+          // this.$axios.req('api/goods/one?id='+this.id+'&page=1')
+          //   .then((res)=>{
+          //     if(res){
+          //       console.log(res);
+          //     }
+          //   }).catch((err)=>{
+          //   console.log(err);
+          // })
           axios.post('api/isCollection',{id:this.id})
             .then((res)=>{
               console.log(res);
@@ -251,6 +251,14 @@
             }).catch((err)=>{
             console.log(err);
           })
+          axios.post('api/goodsOne/comment',this.good)//查询评论
+            .then((res)=>{
+              if(res){
+                console.log(res);
+              }
+            }).catch((err)=>{
+            console.log(err);
+          });
         },
         created() {
 

@@ -8,7 +8,12 @@
         @click-left="onClickLeft"
       />
       <div class="body">
-        <div style="height:60px;display: flex;align-items: center;">github</div>
+        <div style="height:60px;display: flex;align-items: center;">
+          <div class="index">
+            github
+          </div>
+          <input type="text"  >
+        </div>
         <div style="display: flex;align-items: center;justify-content: space-between;height:70px;">
           头像
           <div style="display: flex;align-items: center;">
@@ -20,7 +25,7 @@
           <div class="index">
             用户名
           </div>
-          <input type="text" :placeholder="this.info.username" :value="this.info.username">
+          <input type="text"  :value="this.info.username">
         </div>
         <div class="item">
           <div class="index">昵称</div>
@@ -49,10 +54,10 @@
         <van-button type="primary" @click="editInfo">确认</van-button>
       </div>
       <div class="buttonGroup">
-        <van-button type="default">取消</van-button>
+        <van-button type="default" @click="init">取消</van-button>
       </div>
     </div>
-    
+
 </template>
 
 <script>
@@ -67,6 +72,18 @@
             }
         },
         methods: {
+          init(){
+            this.$axios.req('api/queryUser',{})
+              .then((res) =>{
+                if(res){
+                  console.log(res);
+                  this.info = res.data.userInfo;
+                  console.log(this.info);
+                }
+              }).catch((err) =>{
+              console.log(err);
+            });
+          },
           onClickLeft(){
             this.$router.back(-1);
           },
@@ -80,16 +97,7 @@
           },
         },
         mounted() {
-          this.$axios.req('api/queryUser',{})
-            .then((res) =>{
-              if(res){
-                console.log(res);
-                this.info = res.data.userInfo;
-                console.log(this.info);
-              }
-            }).catch((err) =>{
-            console.log(err);
-          });
+          this.init();
         },
         created() {
 

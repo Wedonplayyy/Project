@@ -16,6 +16,7 @@ export default new Vuex.Store({
     },//用户属性
     address:{},//待修改的地址信息
     addressId:'',//待修改的地址id
+    order:{},//订单
   },
   mutations: {
     ['set_num'] (state, data) {
@@ -44,6 +45,9 @@ export default new Vuex.Store({
     },
     ['set_avatar'](state,data){
       state.user.avatar = data;
+    },
+    ['set_order'](state,data){
+      state.order = data;
     }
   },
   actions: {
