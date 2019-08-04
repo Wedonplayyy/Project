@@ -32,7 +32,7 @@
           <div>运费:0</div>
           <div>剩余数量:10000</div>
           <div style="display: flex;width:80px;justify-content: flex-end">
-            <div style="margin: 0px 5px" >
+            <div style="margin: 0px 5px">
               {{this.text}}
             </div>
               <van-icon
@@ -243,6 +243,11 @@
           axios.post('api/isCollection',{id:this.id})
             .then((res)=>{
               console.log(res);
+              this.isCollection=res.data.isCollection;
+              if(this.isCollection){
+                this.text = '取消收藏';
+                this.name = 'like';
+              }
             }).catch((err)=>{
             console.log(err);
           })

@@ -7,7 +7,8 @@
       left-arrow
       @click-left="onClickLeft"
     />
-    <div class="grid-item" v-for="item in this.datalist">
+    <div style="margin-top: 46px;"></div>
+    <div class="grid-item" v-for="(item,index) in this.datalist" >
       <div class="img">
         <img :src="item.image_path" width="100%">
       </div>
@@ -16,8 +17,11 @@
           {{item.name}}
         </div>
         <div style="display: flex;justify-content: space-between;">
-          <div style="margin:20px 0px;display: flex; color: red; ">
+          <div :id="index" style="margin:20px 0px;display: flex; color: red; ">
             ￥{{item.present_price}}
+          </div>
+          <div :id="index" style="margin:20px 0px;display: flex;align-items: center">
+            <van-icon :id="index" name="close" @click="cancelCollection"/>
           </div>
         </div>
       </div>
@@ -34,24 +38,41 @@
     props: {},
     data() {
       return {
-        datalist:[]
+        datalist:[],//get请求的收藏商品
+        idList:[],//收藏商品的id列表
       };
     },
     methods: {
+      init(){
+        this.$axios.req('api/collection/list')
+          .then((res)=>{
+            if(res){
+              this.datalist = res.data.data.list
+              console.log(res);
+            }
+          }).catch((err)=>{
+          console.log(err);
+        })
+      },
+
       onClickLeft(){//点击返回回到上一页
         this.$router.back(-1);
       },
+
+      cancelCollection:function(e){
+        console.log(e.target.id);
+        this.$axios.req('api/cancelCollection',{id:this.datalist[e.target.id].cid})
+        .then((res)=>{
+          console.log(res);
+          this.$toast(res.data.msg);
+        }).catch((err)=>{
+          console.log(err);
+        });
+        this.init();
+      }
     },
     mounted() {
-      this.$axios.req('api/collection/list')
-        .then((res)=>{
-          if(res){
-            this.datalist = res.data.data.list
-            console.log(res);
-          }
-        }).catch((err)=>{
-        console.log(err);
-      })
+      this.init();
     },
     created() {
 
@@ -66,12 +87,12 @@
 
 <style scoped>
   .grid-item{
-    background-color: white;
+    background-color: #eeeeee;
     display: flex;
-    width: 305px;
+    width: 345px;
     height:100px;
-    margin-top: 46px;
-    padding:10px 10px 10px 15px;
+    margin-top: 5px;
+    padding:10px 15px;
     align-items: center;
   }
   .grid-text{

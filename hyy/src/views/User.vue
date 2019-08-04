@@ -3,30 +3,39 @@
         <div class="header">
           <p>会员中心</p>
         </div>
-      <div class = 'bg-container'>
-        <div class="bg-item" >
-          <div class="tx">
-            <img src="../assets/tx.jpg" >
-          </div>
-          <div v-if="this.$store.state.user.keeplogin!==0">
-            <p >
-              欢迎你,{{this.username}}
-            </p>
-            <p style="font-size: 15px" @click="logout">
-              退出登录
-            </p>
-          </div>
-          <div v-else>
-            <p >
-              未登录
-            </p>
-            <p style="font-size: 15px">
-              <router-link to="/login">登录/注册</router-link>
-            </p>
-          </div>
+      <div class="body">
+        <van-icon name="setting" color="white" @click="toPersonInfo" size="18px" style="margin: 5px;"/>
+        <div class = 'bg-container'>
+          <div class="bg-item" >
+            <div class="tx">
+              <img
+                v-if="this.$store.state.user.keeplogin===0"
+                src="../assets/tx.jpg" >
+              <img
+                v-else
+                :src="this.$store.state.user.avatar">
+            </div>
+            <div v-if="this.$store.state.user.keeplogin!==0">
+              <p >
+                欢迎你,{{this.username}}
+              </p>
+              <p style="font-size: 15px" @click="logout">
+                退出登录
+              </p>
+            </div>
+            <div v-else>
+              <p >
+                未登录
+              </p>
+              <p style="font-size: 15px">
+                <router-link to="/login">登录/注册</router-link>
+              </p>
+            </div>
 
+          </div>
         </div>
       </div>
+
 
       <div>
         <van-grid :border="false" :column-num="5">
@@ -55,13 +64,13 @@
         <div class="item" @click="toAllOrder">
 <!--          全部订单-->
           <div class="icon">
-            <van-icon name="orders-o"></van-icon>
+            <van-icon name="orders-o" :info="this.orderNum"></van-icon>
           </div>
           <div class="text">
             全部订单
           </div>
           <div class="arrow">
-            <van-icon name="arrow" to></van-icon>
+            <van-icon name="arrow" ></van-icon>
           </div>
         </div>
 
@@ -80,7 +89,7 @@
         </div>
 
 
-        <div class="item">
+        <div class="item" @click="toAddress">
           <!--          地址管理-->
           <div class="icon">
             <van-icon name="edit"></van-icon>
@@ -94,7 +103,7 @@
         </div>
 
 
-        <div class="item">
+        <div class="item" @click="toRecentlyView">
           <!--          最近浏览-->
           <div class="icon">
             <van-icon name="search"></van-icon>
@@ -113,17 +122,36 @@
 
 <script>
   import {Toast} from "vant";
-
+  import axios from 'axios';
   export default {
     name: 'User',
     components: {},
     props: {},
     data() {
       return {
-        username:''//用户名
+        username:'',//用户名
+        orderNum:0,//订单数量
       };
     },
     methods: {
+      toPersonInfo(){
+        if(this.$store.state.user.keeplogin===1){
+          this.$router.push({
+            path:'/personinfo'
+          })
+        }else{
+          this.$toast('请先登录！');
+        }
+      },
+      toRecentlyView(){
+        if(this.$store.state.user.keeplogin===1){
+          this.$router.push({
+            path:'/recentlyview'
+          })
+        }else{
+          this.$toast('请先登录！');
+        }
+      },
       logout(){
         // Toast( '退出账户中...');
         this.$axios.req('api/loginOut',{})
@@ -137,22 +165,50 @@
           console.log(err);
         })
       },//登出
-      toAllOrder(){
-        this.$router.push({
-          path:'/allorder'
-        })
+      toAllOrder(){//我的订单
+        if(this.$store.state.user.keeplogin===1){
+          this.$router.push({
+            path:'/allorder'
+          })
+        }
+
       },
-      toCollection(){
-        this.$router.push({
-          path:'/collection'
-        })
+      toCollection(){//收藏
+        if(this.$store.state.user.keeplogin===1){
+          this.$router.push({
+            path:'/collection'
+          })
+        }
+
       },
+      toAddress(){//地址管理
+        if(this.$store.state.user.keeplogin===1){
+          this.$router.push({
+            path:'/address'
+          })
+        }
+      }
     },
     mounted() {
-      // console.log(this.$store.state.user.keeplogin);
       if(this.$store.state.user.keeplogin!==0){
         this.username = this.$store.state.user.username;
-        // console.log(this.username);
+        this.$axios.req('api/myOrder/orderNum')
+          .then((res)=>{
+            if(res){
+              console.log(res);
+              this.orderNum = res.data.numList.length;
+            }
+          }).catch((err)=>{
+          console.log(err);
+        });
+        axios.post('api/goodsOne/comment',{})
+          .then((res)=>{
+            if(res){
+              console.log(res);
+            }
+          }).catch((err)=>{
+          console.log(err);
+        });
       }
     },
     created() {
@@ -187,9 +243,11 @@
     border-radius:50%;
     align-self:center;
   }
+  .body{
+    background-color: #e30c7b;
+  }
   .bg-container{
     display: flex;
-    background-color: #e30c7b;
     width:375px;
     height:220px;
     color: white;

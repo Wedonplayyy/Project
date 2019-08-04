@@ -147,6 +147,7 @@
                         .then((res) => {
                           if(res){
                             console.log('welcome!' + res.data.userInfo.nickname);
+                            this.$store.commit('set_avatar',res.data.userInfo.avatar);
                           }
                         }).catch((err) => {
                         console.log(err);
