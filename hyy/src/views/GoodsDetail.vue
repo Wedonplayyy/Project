@@ -122,6 +122,7 @@
         props: {},
         data() {
             return {
+              defaultAdd:{},//默认地址，方便直接购买用
               text:'收藏',//收藏按钮文字
               color:'red',//收藏按钮颜色
               name:'like-o',//收藏按钮图标
@@ -129,8 +130,8 @@
               data:{},//商品的goodsOne
               id:'',//选中的商品sub_id
               good:{},//商品详情页的商品对象
-              isCollection:0,//
-              show: false,
+              isCollection:0,//是否收藏
+              show: false,//点击立即购买显示
 
               sku: {
                 // 所有sku规格类目与其值的从属关系，比如商品有颜色和尺码两大类规格，颜色下面又有红色和蓝色两个规格值。
@@ -139,7 +140,9 @@
                 list: [],
                 price: '1.00', // 默认价格（单位元）
                 stock_num: 10000, // 商品总库存
-                none_sku: false, // 是否无规格商品
+                none_sku: true, // 是否无规格商品
+                messages:[
+                ],
                 hide_stock: false // 是否隐藏剩余库存
               },
               goods: {
@@ -157,7 +160,22 @@
               this.data.image
             ]);
           },
-          onBuyClicked(){},
+          onBuyClicked(skuData){//直接购买
+
+            skuData.goodsId = this.id;
+            this.$store.commit('set_order',{
+              address:this.defaultAdd.address+this.defaultAdd.addressDetail,
+              tel:this.defaultAdd.tel,
+              orderId:[skuData.goodsId],
+              totalPrice:(skuData.selectedSkuComb.price*skuData.selectedNum)/100,
+              idDirect:true,
+              count:1,
+            });
+            console.log(skuData);
+            this.$router.push({
+              path:'/shoppingPayMent'
+            })
+          },
           onClickLeft(){//点击返回回到上一页
             this.$router.back(-1);
           },
@@ -205,7 +223,7 @@
             })
             this.$store.commit('set_tabActive',2)
           },
-          addShop(){
+          addShop(){//加入购物车
             this.$axios.req('api/addShop',{id:this.id})
               .then((res)=>{
                 console.log(res);
@@ -219,11 +237,18 @@
               console.log(err);
             });
           },
-          buy(){
+          buy(){//立即购买
             this.show = true;
           }
         },
         mounted() {
+          this.$axios.req('api/getDefaultAddress')
+            .then((res) =>{
+              this.defaultAdd=res.data.defaultAdd;
+              this.$store.commit('choose_address',this.defaultAdd);
+            }).catch((err) =>{
+            console.log(err);
+          })
           this.id = this.$store.state.selectedSubId ;
           this.$axios.req('api/goods/one?id='+this.id)
             .then((res)=>{
@@ -238,14 +263,6 @@
             }).catch((err)=>{
             console.log(err);
           })
-          // this.$axios.req('api/goods/one?id='+this.id+'&page=1')
-          //   .then((res)=>{
-          //     if(res){
-          //       console.log(res);
-          //     }
-          //   }).catch((err)=>{
-          //   console.log(err);
-          // })
           axios.post('api/isCollection',{id:this.id})
             .then((res)=>{
               console.log(res);

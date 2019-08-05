@@ -119,29 +119,32 @@
           },
         },
         mounted() {
-          console.log(this.$store.state.chooseAddress);
-          let arr1=[];
-          let arr2=[];
+          this.name = this.$store.state.chooseAddress.name;
+          this.address=this.$store.state.chooseAddress;
+          this.totalPrice = this.$store.state.order.totalPrice*100;
+          this.orderId = this.$store.state.order.orderId;
+          if(!this.$store.state.order.isDirect){
+            console.log(this.$store.state.chooseAddress);
+            let arr1=[];
+            let arr2=[];
 
-          this.$axios.req('api/getCard', {})
-            .then((res)=>{
-              console.log(res);
-              this.name = this.$store.state.chooseAddress.name;
-              this.address=this.$store.state.chooseAddress;
-              console.log(this.address);
-              this.totalPrice = this.$store.state.order.totalPrice*100;
-              this.shopList = res.data.shopList;
-              this.orderId = this.$store.state.order.orderId;
-              arr1 = this.$store.state.order.orderId;
-              console.log(arr1);
-              arr2 = this.shopList;
-              console.log(arr2);
-              this.orderList=this.getOrder(arr1, arr2,this.orderList);
-              console.log(this.orderList);
+            this.$axios.req('api/getCard', {})
+              .then((res)=>{
+                console.log(res);
+                this.shopList = res.data.shopList;
+                arr1 = this.$store.state.order.orderId;
+                console.log(arr1);
+                arr2 = this.shopList;
+                console.log(arr2);
+                this.orderList=this.getOrder(arr1, arr2,this.orderList);
+                console.log(this.orderList);
 
-            }).catch((err)=>{
-            console.log(err);
-          });
+              }).catch((err)=>{
+              console.log(err);
+            });
+          }else{
+            this.orderList=[];
+          }
         },
 
         created() {
