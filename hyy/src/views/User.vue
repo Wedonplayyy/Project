@@ -54,6 +54,7 @@
           <van-grid-item
             icon="comment-o"
             text="评价"
+            @click="toComment"
           />
           <van-grid-item
             icon="points"
@@ -64,7 +65,7 @@
         <div class="item" @click="toAllOrder">
 <!--          全部订单-->
           <div class="icon">
-            <van-icon name="orders-o" :info="this.orderNum"></van-icon>
+            <van-icon name="orders-o"></van-icon>
           </div>
           <div class="text">
             全部订单
@@ -134,7 +135,12 @@
       };
     },
     methods: {
-      toPersonInfo(){
+      toComment(){//进入评价页面
+        this.$router.push({
+          path:'/Comment'
+        })
+      },
+      toPersonInfo(){//个人信息
         if(this.$store.state.user.keeplogin===1){
           this.$router.push({
             path:'/personinfo'

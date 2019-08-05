@@ -7,7 +7,7 @@
         left-arrow
         @click-left="onClickLeft"
       />
-      <div class="swipe">
+      <div class="swipe" @click="Preview">
         <van-swipe :autoplay="3000" indicator-color="orange">
           <van-swipe-item>
             <img :src="this.data.image" width="100%" height="100%">
@@ -113,7 +113,7 @@
 
 <script>
   import axios from 'axios'
-  import {Dialog, Toast} from "vant";
+  import {Dialog, ImagePreview} from "vant";
     export default {
         name: "GoodsDetail",
         components: {
@@ -151,6 +151,12 @@
             }
         },
         methods: {
+          Preview(){
+            ImagePreview([
+              this.data.image,
+              this.data.image
+            ]);
+          },
           onBuyClicked(){},
           onClickLeft(){//点击返回回到上一页
             this.$router.back(-1);

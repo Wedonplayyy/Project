@@ -25,7 +25,10 @@
           <div class="index">
             用户名
           </div>
-          <input type="text"  :value="this.info.username">
+          <input
+            type="text"
+            onfocus="this.select()"
+            v-model="value">
         </div>
         <div class="item">
           <div class="index">昵称</div>
@@ -68,7 +71,8 @@
         props: {},
         data() {
             return {
-              info:{}
+              info:{},
+              value:'',//用户名
             }
         },
         methods: {
@@ -78,6 +82,7 @@
                 if(res){
                   console.log(res);
                   this.info = res.data.userInfo;
+                  this.value=this.info.username;
                   console.log(this.info);
                 }
               }).catch((err) =>{
@@ -88,9 +93,13 @@
             this.$router.back(-1);
           },
           editInfo(){
+            delete this.info.avatar;
+            delete this.info.nickname;
+            this.info.username = this.value;
             axios.post('api/saveUser',this.info)
               .then((res) =>{
                 console.log(res);
+                this.$toast(res.data.msg);
               }).catch((err) =>{
               console.log(err);
             })

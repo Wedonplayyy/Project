@@ -65,10 +65,9 @@
                         <van-icon name="add-o" size="18px" @click="edit(item.count-1,item.cid,item.mallPrice)" />
                         <input
                           :id="item.cid"
-                          :value="item.count"
+                          v-model="item.count"
                           onfocus="this.select()"
-                          @keyup.enter="edit(item.count+1,item.cid,item.mallPrice)"
-                          onblur="this.value=this.reset(item.count)">
+                          @keyup.enter="edit(item.count,item.cid,item.mallPrice)">
                         <van-icon name="add-o" size="18px" @click="edit(item.count+1,item.cid,item.mallPrice)"/>
                       </div>
                     </div>
@@ -101,7 +100,6 @@
               keeplogin:0,//登录状态
               datalist:[],//购物车商品列表
               checkedGoods: [ ],//复选框状态，默认全选
-              countList:[],//数量列表
               totalPrice:0,//总价
               defaultAdd:{},//默认地址
             };
@@ -139,20 +137,6 @@
               count:this.checkedGoods.length,
             });
             console.log(this.$store.state.order);
-            //   axios.post('api/order',{
-          //     address:this.defaultAdd.address+this.defaultAdd.addressDetail,
-          //     tel:this.defaultAdd.tel,
-          //     orderId:this.checkedGoods,
-          //     totalPrice:this.totalPrice,
-          //     idDirect:false,
-          //     count:this.checkedGoods.length,
-          // })
-          //     .then((res) =>{
-          //       console.log(res);
-          //       this.$toast(res.data.msg);
-          //     }).catch((err) =>{
-          //     console.log(err);
-          //   })
             this.$router.push({
               path:'/ShoppingPayMent'
             })
@@ -205,7 +189,8 @@
               .then((res) =>{
               console.log(res);
               this.defaultAdd=res.data.defaultAdd;
-            }).catch((err) =>{
+              this.$store.commit('choose_address',this.defaultAdd);
+              }).catch((err) =>{
               console.log(err);
             })
           }
@@ -228,7 +213,7 @@
           },
           showTotalPrice(){
             this.totalPrice=this.datalist.reduce((total, item) => total + (this.checkedGoods.indexOf(item.cid) !== -1 ? item.present_price*item.count : 0), 0);
-            return this.totalPrice;
+            return this.totalPrice.toFixed(2);
           }
         },
         watch: {},

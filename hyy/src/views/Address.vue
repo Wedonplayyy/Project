@@ -14,6 +14,7 @@
       :list="list"
       @add="onAdd"
       @edit="onEdit"
+      @select="changeAdd"
     />
     <div v-else class="text">
       <div style="text-align: center">
@@ -51,6 +52,10 @@
               }
             )
           },
+          changeAdd(){//切换选中的地址时
+            this.$store.commit('choose_address',this.list[this.chosenAddressId])
+            console.log(this.$store.state.chooseAddress);
+          },
 
           onEdit(item, index) {
             this.$store.commit('set_addressId',this.array[index]._id);
@@ -66,7 +71,6 @@
         mounted() {
           this.$axios.req('api/getAddress')
             .then((res)=>{
-              // console.log(res);
               this.array = res.data.address;
               console.log(this.array);
               for(let i in this.array){
@@ -77,15 +81,12 @@
                   address: this.array[i].address + this.array[i].addressDetail
                 });
               }
+              this.$store.commit('choose_address',this.list[this.chosenAddressId])
+              console.log(this.$store.state.chooseAddress);
             }).catch((err)=>{
               console.log(err);
             });
-          this.$axios.req('api/getDefaultAddress')
-            .then((res)=>{
-              console.log(res);
-            }).catch((err)=>{
-            console.log(err);
-          });
+
           console.log(this.list);
         },
         created() {

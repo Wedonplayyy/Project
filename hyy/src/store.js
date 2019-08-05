@@ -15,8 +15,10 @@ export default new Vuex.Store({
       avatar:'',//用户头像
     },//用户属性
     address:{},//待修改的地址信息
+    chooseAddress:{},//购物车页面点击结算选择的地址信息，默认为默认地址
     addressId:'',//待修改的地址id
     order:{},//订单
+    commentGood:{},//待评价商品信息
   },
   mutations: {
     ['set_num'] (state, data) {
@@ -48,6 +50,12 @@ export default new Vuex.Store({
     },
     ['set_order'](state,data){
       state.order = data;
+    },
+    ['choose_address'](state,data){
+      state.chooseAddress = data;
+    },
+    ['set_comment'](state,data){
+      state.commentGood = data;
     }
   },
   actions: {

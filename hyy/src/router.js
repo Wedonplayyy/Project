@@ -78,5 +78,20 @@ export default new Router({
       name: 'ShoppingPayMent',
       component: () => import('./views/ShoppingPayMent.vue'),
     },
+    {
+      path: '/comment',
+      name: 'Comment',
+      component: () => import('./views/Comment.vue'),
+    },
+    {
+      path: '/submitcomment',
+      name: 'SubmitComment',
+      component: () => import('./views/SubmitComment.vue'),
+    },
+    {
+      path: '/alreadyEvaluated',
+      name: 'AlreadyEvaluated',
+      component: () => import('./views/AlreadyEvaluated.vue'),
+    },
   ],
 });

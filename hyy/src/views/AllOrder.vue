@@ -8,12 +8,46 @@
       @click-left="onClickLeft"
     />
     <div class="body">
-      <van-tabs v-model="active">
-        <van-tab title="全部">内容 1</van-tab>
-        <van-tab title="待支付">内容 2</van-tab>
+      <van-tabs  sticky v-model="active">
+        <van-tab title="全部">
+          <div class="item" v-for="item in this.orderInfo">
+            <div class="id">
+              订单编号:{{item.order_id}}
+            </div>
+            <div
+              class="good"
+              v-for="good in item.order_list">
+              <img :src="good.image_path" width="80px" height="80px">
+              <div class="good-name">
+                {{good.name}}
+              </div>
+              <div class="price">
+                <div style="text-align: right;color:red;">
+                ￥{{good.present_price}}
+                </div>
+                <div style="text-align: right;margin-top: 2px;color:grey;">
+                  x{{good.count}}
+                </div>
+              </div>
+            </div>
+            <div class="footer">
+              <div style="text-align: right">
+                创建时间:{{item.add_time}}
+              </div>
+              <div style="text-align: right;">
+                收货地址:{{item.address}}
+              </div>
+              <div style="text-align: right">
+                共{{item.order_list.length}}件商品，合计：{{item.mallPrice.toFixed(2)}}
+              </div>
+            </div>
+          </div>
+        </van-tab>
         <van-tab title="代发货">内容 3</van-tab>
         <van-tab title="待收货">内容 4</van-tab>
-        <van-tab title="已完成">内容 4</van-tab>
+        <van-tab title="已完成">
+
+        </van-tab>
       </van-tabs>
     </div>
   </div>
@@ -27,7 +61,8 @@
     props: {},
     data() {
       return {
-        active: 0,
+        active: 0,//
+        orderInfo:{},//已完成订单详情
       };
     },
     methods: {
@@ -36,6 +71,13 @@
       },
     },
     mounted() {
+      this.$axios.req('api/myOrder')
+        .then((res) =>{
+          console.log(res);
+          this.orderInfo= res.data.list;
+        }).catch((err) =>{
+        console.log(err);
+      })
     },
     created() {
 
@@ -52,5 +94,41 @@
   .container{}
   .body{
     margin-top: 46px;
+    font-size: 16px;
   }
+  .item{
+    margin: 10px 0px 20px 0px;
+    /*height:375px;*/
+  }
+  .id{
+    font-size: 16px;
+    width:355px;
+    height:25px;
+    padding:8px 10px;
+  }
+  .good{
+    display: flex;
+  }
+  .good img{
+    border:solid 2px #eeeeee;
+    margin: 10px 15px;
+  }
+  .good-name{
+    font-size: 16px;
+    width:170px;
+    padding: 10px 0px;
+  }
+  .price{
+    font-size: 16px;
+    padding: 10px 8px;
+    width:70px;
+  }
+  .footer{
+    width:359px;
+    padding:5px 8px;
+  }
+  .footer div{
+    margin:5px 0px;
+  }
+
 </style>
