@@ -1,0 +1,902 @@
+2019-08-03 15:00:50,321 ERROR 8176 [-/127.0.0.1/-/75ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:07:38,911 ERROR 8176 [-/127.0.0.1/-/2ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:09:16,275 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:10:03,841 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:10:44,596 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:11:38,558 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:12:16,269 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:13:31,422 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:15:50,945 ERROR 8176 [-/127.0.0.1/-/5ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:17:21,068 ERROR 8176 [-/127.0.0.1/-/0ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:18:06,740 ERROR 8176 [-/127.0.0.1/-/2ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:19:41,380 ERROR 8176 [-/127.0.0.1/-/4ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:19:42,720 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:19:42,970 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-03 15:19:43,171 ERROR 8176 [-/127.0.0.1/-/1ms POST /v1/address] nodejs.CastError: Cast to ObjectId failed for value "1" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query._updateThunk (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3583:8)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3693:23)
+    at model.Query._wrappedThunk [as _updateOne] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"1\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"1\""
+kind: "ObjectId"
+value: 1
+path: "_id"
+reason: undefined
+model: undefined
+pid: 8176
+hostname: stu014
+
+2019-08-04 10:42:28,933 ERROR 2008 [-/127.0.0.1/-/33ms POST /v1/saveUser] nodejs.ENOENTError: ENOENT: no such file or directory, open 'C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\public\avatar\1564886548899dklbbfbbak2_hjfaaf5d44f44c9485ba1ff064aa34.png'
+ENOENTError: ENOENT: no such file or directory, open 'C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\public\avatar\1564886548899dklbbfbbak2_hjfaaf5d44f44c9485ba1ff064aa34.png'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "C:\\Users\\Administrator\\Desktop\\vue商城项目\\vue商城项目\\server\\app\\public\\avatar\\1564886548899dklbbfbbak2_hjfaaf5d44f44c9485ba1ff064aa34.png"
+name: "ENOENTError"
+pid: 2008
+hostname: stu014
+
+2019-08-04 14:27:21,418 ERROR 2008 [-/127.0.0.1/-/43ms POST /v1/deleteAddress] nodejs.CastError: Cast to ObjectId failed for value "2" at path "_id" for model "Address"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at ObjectId.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\objectid.js:244:11)
+    at ObjectId.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at ObjectId.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at ObjectId.SchemaType.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1352:15)
+    at ObjectId.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:307:32)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:3102:8)
+    at model.Query._wrappedThunk [as _findOneAndDelete] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to ObjectId failed for value \"2\" at path \"_id\" for model \"Address\""
+name: "CastError"
+stringValue: "\"2\""
+kind: "ObjectId"
+value: "2"
+path: "_id"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:32:04,043 ERROR 2008 [-/127.0.0.1/-/24ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: 'bba0fe9496e7443f93451b15e1a99453' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\""
+kind: "string"
+value: {"id":"bba0fe9496e7443f93451b15e1a99453"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:32:04,053 ERROR 2008 [-/127.0.0.1/-/2ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: '042911885b3949d49c92e457dada7dd3' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: '042911885b3949d49c92e457dada7dd3' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '042911885b3949d49c92e457dada7dd3' }\""
+kind: "string"
+value: {"id":"042911885b3949d49c92e457dada7dd3"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:33:52,262 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: '042911885b3949d49c92e457dada7dd3' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: '042911885b3949d49c92e457dada7dd3' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '042911885b3949d49c92e457dada7dd3' }\""
+kind: "string"
+value: {"id":"042911885b3949d49c92e457dada7dd3"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:33:52,264 ERROR 2008 [-/127.0.0.1/-/0ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: 'bba0fe9496e7443f93451b15e1a99453' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\""
+kind: "string"
+value: {"id":"bba0fe9496e7443f93451b15e1a99453"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:35:45,095 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: null }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: null }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: null }\""
+kind: "string"
+value: {"id":null}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:35:45,099 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: null }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: null }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: null }\""
+kind: "string"
+value: {"id":null}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:36:25,034 ERROR 2008 [-/127.0.0.1/-/0ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: '042911885b3949d49c92e457dada7dd3' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: '042911885b3949d49c92e457dada7dd3' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '042911885b3949d49c92e457dada7dd3' }\""
+kind: "string"
+value: {"id":"042911885b3949d49c92e457dada7dd3"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:38:15,478 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ '042911885b3949d49c92e457dada7dd3': '' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ '042911885b3949d49c92e457dada7dd3': '' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ '042911885b3949d49c92e457dada7dd3': '' }\""
+kind: "string"
+value: {"042911885b3949d49c92e457dada7dd3":""}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:38:15,485 ERROR 2008 [-/127.0.0.1/-/5ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ bba0fe9496e7443f93451b15e1a99453: '' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ bba0fe9496e7443f93451b15e1a99453: '' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ bba0fe9496e7443f93451b15e1a99453: '' }\""
+kind: "string"
+value: {"bba0fe9496e7443f93451b15e1a99453":""}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:38:54,513 ERROR 2008 [-/127.0.0.1/-/2ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ val: '042911885b3949d49c92e457dada7dd3' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ val: '042911885b3949d49c92e457dada7dd3' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ val: '042911885b3949d49c92e457dada7dd3' }\""
+kind: "string"
+value: {"val":"042911885b3949d49c92e457dada7dd3"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:38:54,518 ERROR 2008 [-/127.0.0.1/-/2ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ val: 'bba0fe9496e7443f93451b15e1a99453' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ val: 'bba0fe9496e7443f93451b15e1a99453' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ val: 'bba0fe9496e7443f93451b15e1a99453' }\""
+kind: "string"
+value: {"val":"bba0fe9496e7443f93451b15e1a99453"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:39:08,489 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ val: '042911885b3949d49c92e457dada7dd3' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ val: '042911885b3949d49c92e457dada7dd3' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ val: '042911885b3949d49c92e457dada7dd3' }\""
+kind: "string"
+value: {"val":"042911885b3949d49c92e457dada7dd3"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:39:08,800 ERROR 2008 [-/127.0.0.1/-/2ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ val: 'bba0fe9496e7443f93451b15e1a99453' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ val: 'bba0fe9496e7443f93451b15e1a99453' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ val: 'bba0fe9496e7443f93451b15e1a99453' }\""
+kind: "string"
+value: {"val":"bba0fe9496e7443f93451b15e1a99453"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:39:26,398 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: '042911885b3949d49c92e457dada7dd3' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: '042911885b3949d49c92e457dada7dd3' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '042911885b3949d49c92e457dada7dd3' }\""
+kind: "string"
+value: {"id":"042911885b3949d49c92e457dada7dd3"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:39:26,403 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: 'bba0fe9496e7443f93451b15e1a99453' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\""
+kind: "string"
+value: {"id":"bba0fe9496e7443f93451b15e1a99453"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:40:49,181 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: '042911885b3949d49c92e457dada7dd3' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: '042911885b3949d49c92e457dada7dd3' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '042911885b3949d49c92e457dada7dd3' }\""
+kind: "string"
+value: {"id":"042911885b3949d49c92e457dada7dd3"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-04 17:40:49,185 ERROR 2008 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{ id: 'bba0fe9496e7443f93451b15e1a99453' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:553:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:948:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1362:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schema\string.js:609:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\schematype.js:1331:15)
+    at cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\cast.js:252:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:4576:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:1783:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\query.js:2719:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at process.nextTick (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\kareem\index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+message: "Cast to string failed for value \"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: 'bba0fe9496e7443f93451b15e1a99453' }\""
+kind: "string"
+value: {"id":"bba0fe9496e7443f93451b15e1a99453"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 2008
+hostname: stu014
+
+2019-08-05 11:45:12,248 ERROR 2244 [-/127.0.0.1/-/29ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\controller\api\operatingGoods.js:197:34)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 2244
+hostname: stu014
+
+2019-08-05 11:47:33,189 ERROR 2244 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\controller\api\operatingGoods.js:197:34)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 2244
+hostname: stu014
+
+2019-08-05 13:28:49,758 ERROR 2244 [-/127.0.0.1/-/14ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\controller\api\operatingGoods.js:197:34)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+
+pid: 2244
+hostname: stu014
+
+2019-08-05 13:59:28,128 ERROR 2244 [-/127.0.0.1/-/18ms POST /v1/order] nodejs.TypeError: Cannot read property 'length' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\controller\api\operatingGoods.js:178:42)
+    at Object.callFn (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+
+pid: 2244
+hostname: stu014
+
+2019-08-05 18:24:23,932 ERROR 2244 [-/127.0.0.1/-/26ms POST /v1/saveUser] nodejs.ENOENTError: ENOENT: no such file or directory, open 'C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\public\avatar\1565000663901dklbbfbbak2_hjfaaf5d44f44c9485ba1ff064aa34.png'
+ENOENTError: ENOENT: no such file or directory, open 'C:\Users\Administrator\Desktop\vue商城项目\vue商城项目\server\app\public\avatar\1565000663901dklbbfbbak2_hjfaaf5d44f44c9485ba1ff064aa34.png'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "C:\\Users\\Administrator\\Desktop\\vue商城项目\\vue商城项目\\server\\app\\public\\avatar\\1565000663901dklbbfbbak2_hjfaaf5d44f44c9485ba1ff064aa34.png"
+name: "ENOENTError"
+pid: 2244
+hostname: stu014
+

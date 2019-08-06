@@ -65,10 +65,10 @@
         .then((res)=>{
           console.log(res);
           this.$toast(res.data.msg);
+          this.init();
         }).catch((err)=>{
           console.log(err);
         });
-        this.init();
       }
     },
     mounted() {

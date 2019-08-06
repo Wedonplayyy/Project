@@ -19,6 +19,7 @@ export default new Vuex.Store({
     addressId:'',//待修改的地址id
     order:{},//订单
     commentGood:{},//待评价商品信息
+    AlreadyEvaluated:{},//已评价商品信息
   },
   mutations: {
     ['set_num'] (state, data) {
@@ -56,6 +57,9 @@ export default new Vuex.Store({
     },
     ['set_comment'](state,data){
       state.commentGood = data;
+    },
+    ['set_alreadycomment'](state,data){
+      state.AlreadyEvaluated = data;
     }
   },
   actions: {

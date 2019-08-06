@@ -161,10 +161,10 @@ author:hyy
         this.show = true;
       },
       toGoodsDetail(id){
+        this.$store.commit('set_SelectedSubId',id)
         this.$router.push({
           path:'/detail'
         })
-        this.$store.commit('set_SelectedSubId',id)
       },
       set(id) {
         this.$store.commit('set_num',id)

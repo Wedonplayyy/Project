@@ -242,6 +242,7 @@
           }
         },
         mounted() {
+          this.id = this.$store.state.selectedSubId ;
           this.$axios.req('api/getDefaultAddress')
             .then((res) =>{
               this.defaultAdd=res.data.defaultAdd;
@@ -249,10 +250,10 @@
             }).catch((err) =>{
             console.log(err);
           })
-          this.id = this.$store.state.selectedSubId ;
           this.$axios.req('api/goods/one?id='+this.id)
             .then((res)=>{
               if(res){
+                console.log(res);
                 this.good = res.data.goods;
                 this.data = res.data.goods.goodsOne;
                 this.goods.title = this.data.name;
@@ -274,14 +275,6 @@
             }).catch((err)=>{
             console.log(err);
           })
-          axios.post('api/goodsOne/comment',this.good)//查询评论
-            .then((res)=>{
-              if(res){
-                console.log(res);
-              }
-            }).catch((err)=>{
-            console.log(err);
-          });
         },
         created() {
 
@@ -290,7 +283,7 @@
         computed: {},
         watch: {
           text:function(){
-            return this.text
+            return this.text;
           },
         },
         directives: {}

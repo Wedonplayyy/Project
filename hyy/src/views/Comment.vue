@@ -49,7 +49,7 @@
                 icon="chat-o"
                 type="danger"
                 size="small"
-                @click="toAlreadyComment"
+                @click="toAlreadyComment(item)"
               >点击查看</van-button>
             </div>
           </div>
@@ -83,7 +83,9 @@
               path:'/SubmitComment'
             })
           },
-          toAlreadyComment(){
+          toAlreadyComment(i){
+            this.$store.commit('set_alreadycomment',i)
+            console.log(this.$store.state.AlreadyEvaluated);
             this.$router.push({
               path:'/alreadyEvaluated'
             })

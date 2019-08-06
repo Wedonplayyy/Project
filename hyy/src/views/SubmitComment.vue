@@ -39,8 +39,7 @@
         <van-button type="primary" @click="onSubmit">提交</van-button>
       </div>
     </div>
-    </div>
-    
+  </div>
 </template>
 
 <script>

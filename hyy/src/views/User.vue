@@ -136,9 +136,13 @@
     },
     methods: {
       toComment(){//进入评价页面
-        this.$router.push({
-          path:'/Comment'
-        })
+        if(this.$store.state.user.keeplogin===1){
+          this.$router.push({
+            path:'/Comment'
+          })
+        }else{
+          this.$toast('请先登录！');
+        }
       },
       toPersonInfo(){//个人信息
         if(this.$store.state.user.keeplogin===1){
@@ -176,6 +180,8 @@
           this.$router.push({
             path:'/allorder'
           })
+        }else{
+          this.$toast('请先登录！');
         }
 
       },
@@ -184,14 +190,17 @@
           this.$router.push({
             path:'/collection'
           })
+        }else{
+          this.$toast('请先登录！');
         }
-
       },
       toAddress(){//地址管理
         if(this.$store.state.user.keeplogin===1){
           this.$router.push({
             path:'/address'
           })
+        }else{
+          this.$toast('请先登录！');
         }
       }
     },
